@@ -1,0 +1,20 @@
+{
+    "cucumberautocomplete.steps": [
+        "tests/steps/*.ts",
+    ],
+    "cucumberautocomplete.syncfeatures": "tests/features/*feature",
+    "cucumberautocomplete.smartSnippets": true,
+    "cucumberautocomplete.stepsInvariants": true,
+    "cucumberautocomplete.customParameters": [
+        {
+            "parameter": "{ab}",
+            "value": "(a|b)"
+        },
+    ],
+    "cucumberautocomplete.onTypeFormat": true,
+    "editor.quickSuggestions": {
+        "comments": false,
+        "strings": true,
+        "other": true
+    }
+}

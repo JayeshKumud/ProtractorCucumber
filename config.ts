@@ -10,9 +10,16 @@ export let config: Config = {
   // path relative to the current config file
   frameworkPath: require.resolve('protractor-cucumber-framework'),
 
+  suites: {
+    'home': '../tests/features/home.feature',
+    'signIn': '../tests/features/signIn.feature',
+    'table': '../tests/features/table.feature',
+    'all': ['../tests/features/home.feature', '../tests/features/signIn.feature', '../tests/features/table.feature']
+  },
+
   // require feature files
   specs: [
-    '../tests/features/home.feature'
+    '../tests/features/*.feature'
   ],
 
   cucumberOpts: {
@@ -20,7 +27,8 @@ export let config: Config = {
     format: 'json:./report.json',
     // require step definitions
     require: [
-      './tests/steps/*.js'
+      './tests/steps/*.js',
+      './hooks/hooks/*js'
     ]
   },
 

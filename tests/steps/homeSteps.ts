@@ -1,7 +1,7 @@
 import { Given, When, Then } from 'cucumber';
 import { browser, element, by } from 'protractor';
 import { calculator } from '../pages/calculator';
-import {logger} from '../../config/logger';
+import { logger } from '../../config/logger';
 import chai from 'chai';
 
 let prop = require("../testdata/prop");
@@ -15,7 +15,7 @@ Given('I navigate to calc app home page', async () => {
         expect(title).to.equal('Super Calculator');
         logger.Log().debug("Browser Title is verified : " + title);
     })
- 
+
     browser.ignoreSynchronization = false;
 });
 

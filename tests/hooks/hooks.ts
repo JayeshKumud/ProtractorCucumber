@@ -1,8 +1,20 @@
-import { Before, After, BeforeAll, Status } from "cucumber";
+import { Before, After, BeforeAll, Status, AfterAll, defineSupportCode } from "cucumber";
 import { browser } from "protractor";
 import { logger } from "../../config/logger";
 
-BeforeAll(() => {
+// Run before all the feature
+BeforeAll({ timeout: 60 * 1000 }, async () => {
+    setDefaultTimeout(60 * 1000);
+})
+
+BeforeAll({ timeout: 60 * 1000 }, () => {
+    defineSupportCode( ({ setDefaultTimeout }) => {
+      setDefaultTimeout(60 * 1000);
+    });
+  });
+
+// Run before all the feature
+AfterAll({ timeout: 60 * 1000 }, async () => {
 
 })
 
@@ -17,6 +29,7 @@ Before({ tags: "@smoke" }, () => {
 After({ tags: "@smoke" }, () => {
     logger.Log().debug("Tag completed");
 })
+
 
 After(async function (scenario) {
     if (scenario.result.status === Status.FAILED) {

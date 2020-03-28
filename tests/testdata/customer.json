@@ -1,0 +1,24 @@
+{
+    "customers": [
+        {
+            "firstname": "ABC",
+            "lastname": "XYZ",
+            "postalcode": "12345",
+            "mobile": {
+                "personal": 98267779,
+                "business": 87666789,
+                "home": 87788772
+            }
+        },
+        {
+            "firstname": "ABC",
+            "lastname": "XYZ",
+            "postalcode": "12345",
+            "mobile": {
+                "personal": 98267779,
+                "business": 87666789,
+                "home": 87788772
+            }
+        }
+    ]
+}
