@@ -8,3 +8,11 @@ Feature: Math Operation
         And I enter second number as "5"
         When I click on "" button
         Then I see "10" display as result
+
+    @smoke
+    Scenario: Addition of two numbers
+        Given I navigate to calc app home page
+        And I enter first number as "5"
+        And I enter second number as "5"
+        When I click on "" button
+        Then I see "11" display as result
