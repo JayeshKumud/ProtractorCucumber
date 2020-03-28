@@ -1,0 +1,16 @@
+{
+
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "removeComments": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "out",
+    "types": ["jasmine","node"]
+  },
+
+  "exclude": [
+    "node_modules/*"
+  ]
+}

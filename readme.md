@@ -1,0 +1,1 @@
+npx webdriver-manager update // to install webdriver locally
