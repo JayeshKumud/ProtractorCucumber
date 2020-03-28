@@ -10,6 +10,7 @@ export let config: Config = {
   frameworkPath: require.resolve('protractor-cucumber-framework'),
 
   // require feature files
+  tags: "@smoke",
   specs: [
     '../tests/features/home.feature'
   ],

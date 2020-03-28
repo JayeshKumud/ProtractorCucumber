@@ -1,6 +1,6 @@
 import { protractor } from "protractor/built/ptor";
 import { browser } from "protractor";
-import { log4jsconfig } from "../config/log4jsconfig";
+import { logger } from '../../config/logger';
 
 export class alert {
 
@@ -12,7 +12,7 @@ export class alert {
         let alertText = alert.getText();
 
         alertText.then(function (txt) {
-            log4jsconfig.Log().debug(txt);
+            logger.Log().debug(txt);
         })
 
         browser.sleep(2000);
