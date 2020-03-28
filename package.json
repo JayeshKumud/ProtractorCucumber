@@ -8,7 +8,7 @@
     "webdriver-update": "./node_modules/.bin/webdriver-manager update",
     "tsc": "tsc",
     "pretest": "npm run tsc",
-    "test": "protractor out/config.js --suite all"
+    "test": "protractor out/config.js --suite home"
   },
   "author": "Jayesh Kumud",
   "license": "ISC",
