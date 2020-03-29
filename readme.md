@@ -5,7 +5,9 @@ npx webdriver-manager update // to install webdriver locally
 
 Command to run from Jankins
 Call npm install
-Call ./node_modules/protractor/bin/webdriver-manager update
+Call node ./node_modules/protractor/bin/webdriver-manager update
+OR
+Call npx webdriver-manager update
 Call npm test
 
 OR 
