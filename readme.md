@@ -11,3 +11,10 @@ Call node ./node_modules/protractor/bin/webdriver-manager update
 Call npm test
   OR 
 Call protractor out/config.js --suite SUITE NAME
+
+Cucumber report in Jenkins
+
+Install Cucumber Report plugin
+Select 'Cucumber' from post build action
+Set Cucumber.json as File Include Pattern
+Set ./ as JSON Reports Path 
