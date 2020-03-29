@@ -33,7 +33,7 @@ export let config: Config = {
   },
 
   capabilities: {
-    browserName: 'firefox'
+    browserName: 'Chrome'
   },
 
   onComplete: () => {
@@ -60,5 +60,4 @@ export let config: Config = {
     //more info on `metadata` is available in `options` section below.
     //to generate consodilated report from multi-cucumber JSON files, please use `jsonDir` option instead of `jsonFile`. More info is available in `options` section below.
   }
-
 };
