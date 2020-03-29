@@ -1,4 +1,4 @@
 node_modules/
 logger/
 out/
-report.json
+Cucumber.json

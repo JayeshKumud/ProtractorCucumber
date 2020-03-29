@@ -24,7 +24,7 @@ export let config: Config = {
 
   cucumberOpts: {
     tags: "@smoke",
-    format: 'json:./report.json',
+    format: 'json:./Cucumber.json',
     // require step definitions
     require: [
       './tests/steps/*.js',
@@ -40,7 +40,7 @@ export let config: Config = {
 
     var options = {
       theme: 'bootstrap',
-      jsonFile: './report.json',
+      jsonFile: './Cucumber.json',
       output: './logger/report/report.html',
       reportSuiteAsScenarios: true,
       scenarioTimestamp: true,
