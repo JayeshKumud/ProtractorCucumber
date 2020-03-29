@@ -15,6 +15,6 @@ Call protractor out/config.js --suite SUITE NAME
 Cucumber report in Jenkins
 
 Install Cucumber Report plugin
-Select 'Cucumber' from post build action
+Select 'Cucumber Report' from post build action
 Set Cucumber.json as File Include Pattern
 Set ./ as JSON Reports Path 
