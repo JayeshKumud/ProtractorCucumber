@@ -33,7 +33,7 @@ export let config: Config = {
   },
 
   capabilities: {
-    browserName: 'Chrome'
+    browserName: 'chrome'
   },
 
   onComplete: () => {
