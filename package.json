@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "protractor": "./node_modules/protractor/build/cli.js",
-    "webdriver-update": "./node_modules/.bin/webdriver-manager update",
+    "webdriver-update": "webdriver-manager update",
     "tsc": "tsc",
     "pretest": "npm run tsc",
     "test": "protractor out/config.js --suite home"

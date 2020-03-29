@@ -5,7 +5,7 @@ export let config: Config = {
 
   // set to "custom" instead of cucumber.
   framework: 'custom',
-  // directConnect: true,
+  directConnect: true,
 
   // path relative to the current config file
   frameworkPath: require.resolve('protractor-cucumber-framework'),
