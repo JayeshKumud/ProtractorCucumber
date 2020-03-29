@@ -5,4 +5,6 @@ npx webdriver-manager update // to install webdriver locally
 
 Command to run from Jankins
 Call npm install
+Call /node_modules/.bin/webdriver-manager update
+Call npm test
 protractor out/config.js --suite home
