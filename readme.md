@@ -1,14 +1,13 @@
 Navigate to terminal
 npm install // to install all the depedency in package.json
-npx webdriver-manager update // to install webdriver locally
-"webdriver-update": "./node_modules/.bin/webdriver-manager update",
+node ./node_modules/protractor/bin/webdriver-manager update // to install webdriver locally
+npm test
+  OR 
+protractor out/config.js --suite SUITE NAME
 
 Command to run from Jankins
 Call npm install
 Call node ./node_modules/protractor/bin/webdriver-manager update
-OR
-Call npx webdriver-manager update
 Call npm test
-
-OR 
+  OR 
 Call protractor out/config.js --suite SUITE NAME
