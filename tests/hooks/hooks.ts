@@ -4,14 +4,8 @@ import { logger } from "../../config/logger";
 
 // Run before all the feature
 BeforeAll({ timeout: 60 * 1000 }, async () => {
-    setDefaultTimeout(60 * 1000);
-})
 
-BeforeAll({ timeout: 60 * 1000 }, () => {
-    defineSupportCode( ({ setDefaultTimeout }) => {
-      setDefaultTimeout(60 * 1000);
-    });
-  });
+})
 
 // Run before all the feature
 AfterAll({ timeout: 60 * 1000 }, async () => {

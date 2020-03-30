@@ -1,18 +1,18 @@
-Feature: Sign In Feature
-    As math idiot I want to add two numbers so that I can have results.
+Feature: Customer creation 
+    As use I want to create customer so that they can access site
 
     Background: 
-    Given I navigate to calc app home page
+    Given I navigate to "calc" page url
 
     @smoke
-    Scenario: Addition of two numbers
+    Scenario: Create a customer A
         And I enter first number as "5"
         And I enter second number as "5"
         When I click on "Go" button
         Then I see "11" display as result
 
     @smoke
-    Scenario: Addition of two numbers
+    Scenario: Create a customer B
         And I enter first number as "5"
         And I enter second number as "5"
         When I click on "Go" button

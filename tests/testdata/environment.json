@@ -1,4 +1,6 @@
 {
-    "url_Bank": "http://www.way2automation.com/angularjs-protractor/banking/#/manager/addCust",
-    "url_Calc": "http://juliemr.github.io/protractor-demo/"
+    "urls": {
+        "bank": "http://www.way2automation.com/angularjs-protractor/banking/#/manager/addCust",
+        "calc": "http://juliemr.github.io/protractor-demo/"
+    }
 }

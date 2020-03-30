@@ -11,24 +11,26 @@ export let config: Config = {
   frameworkPath: require.resolve('protractor-cucumber-framework'),
 
   suites: {
-    'home': '../tests/features/home.feature',
-    'signIn': '../tests/features/signIn.feature',
-    'table': '../tests/features/table.feature',
-    'all': ['../tests/features/home.feature', '../tests/features/signIn.feature', '../tests/features/table.feature']
+    'calc': '../tests/features/calculator/*.feature',
+    'cust': '../tests/features/customer/*.feature',
+    'table': '../tests/features/table/*.feature',
+    'Two': ['../tests/features/calculator/*.feature', '../tests/features/customer/*.feature'],
+    'all':['../tests/features/**/*.feature']
   },
 
   // require feature files
   specs: [
-    '../tests/features/*.feature'
+    '../tests/features/**/*.feature'
   ],
 
   cucumberOpts: {
     tags: "@smoke",
     format: 'json:./Cucumber.json',
+    
     // require step definitions
     require: [
-      './tests/steps/*.js',
-      './hooks/hooks/*js'
+      './tests/**/*.js',
+      //'./tests/hooks/*.js'
     ]
   },
 

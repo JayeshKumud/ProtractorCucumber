@@ -1,4 +1,4 @@
-Feature: Verify table feature
+Feature: Verify Table
     As POC I want to display table feature so that I can use in project.
 
     @smoke
@@ -7,5 +7,3 @@ Feature: Verify table feature
             | firstNnumber |
             | 5            |
             | 10           |
-        When I click button
-        Then I see result

@@ -1,14 +1,18 @@
 {
   "name": "protractorcucumber",
   "version": "1.0.0",
-  "description": "",
+  "description": "bdd framework with protractor",
   "main": "index.js",
+ 
   "scripts": {
+
     "protractor": "./node_modules/protractor/build/cli.js",
     "webdriver-update": "./node_modules/protractor/bin/webdriver-manager update",
-    "tsc": "tsc",
+
+    "tsc": "tsc --build --clean && tsc",
     "pretest": "npm run tsc",
-    "test": "protractor out/config.js --suite home"
+    "test": "protractor out/config.js --suite cust"
+
   },
   "author": "Jayesh Kumud",
   "license": "ISC",
@@ -28,7 +32,10 @@
     "chai-as-promised": "7.1.1",
     "@types/chai": "4.1.3",
     "cucumber-html-reporter": "~5.2.0",
-    "load-json-file": "6.2.0",
+    "load-json-file": "6.2.0"
+  },
+  "devDependencies": {
+    "ts-clean": "^1.0.3",
     "webdriver-manager": "12.1.7"
   }
 }

@@ -3,20 +3,13 @@ import { browser, element, by } from 'protractor';
 import { calculator } from '../pages/calculator';
 import { logger } from '../../config/logger';
 import chai from 'chai';
-import envi from '../testdata/environment.json';
+
+import { opps } from '../util/opps';
+import { urls } from '../testdata/environment.json'
 
 var calc = new calculator();
+var opp = new opps();
 var expect = chai.expect;
-
-Given('I navigate to calc app home page', async () => {
-    await browser.get(envi.url_Calc);
-    browser.getTitle().then((title) => {
-        expect(title).to.equal('Super Calculator');
-        logger.Log().debug("Browser Title is verified : " + title);
-    })
-
-    browser.ignoreSynchronization = false;
-});
 
 
 Given('I enter first number as {string}', async (value) => {
