@@ -1,6 +1,7 @@
 import { protractor } from "protractor/built/ptor";
 import { browser } from "protractor";
 import { logger } from '../../config/logger';
+import { expect } from "chai";
 
 export class alert {
 
@@ -16,7 +17,7 @@ export class alert {
         })
 
         browser.sleep(2000);
-        expect(alertText).toContain(text);
+        expect(alertText).contain(text);
         alert.accept();
     }
 }

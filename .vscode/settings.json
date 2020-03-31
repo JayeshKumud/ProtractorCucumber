@@ -1,8 +1,8 @@
 {
     "cucumberautocomplete.steps": [
-        "tests/steps/*.ts",
+        "src/steps/*.ts",
     ],
-    "cucumberautocomplete.syncfeatures": "tests/features/*feature",
+    "cucumberautocomplete.syncfeatures": "src/features/*feature",
     "cucumberautocomplete.smartSnippets": true,
     "cucumberautocomplete.stepsInvariants": true,
     "cucumberautocomplete.customParameters": [

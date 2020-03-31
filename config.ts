@@ -11,16 +11,16 @@ export let config: Config = {
   frameworkPath: require.resolve('protractor-cucumber-framework'),
 
   suites: {
-    'calc': '../tests/features/calculator/*.feature',
-    'cust': '../tests/features/customer/*.feature',
-    'table': '../tests/features/table/*.feature',
-    'Two': ['../tests/features/calculator/*.feature', '../tests/features/customer/*.feature'],
-    'all':['../tests/features/**/*.feature']
+    'calc': '../src/features/calculator/*.feature',
+    'cust': '../src/features/customer/*.feature',
+    'table': '../src/features/table/*.feature',
+    'Two': ['../src/features/calculator/*.feature', '../src/features/customer/*.feature'],
+    'all':['../src/features/**/*.feature']
   },
 
   // require feature files
   specs: [
-    '../tests/features/**/*.feature'
+    '../src/features/**/*.feature'
   ],
 
   cucumberOpts: {
@@ -29,8 +29,7 @@ export let config: Config = {
     
     // require step definitions
     require: [
-      './tests/**/*.js',
-      //'./tests/hooks/*.js'
+      './src/**/*.js',
     ]
   },
 

@@ -9,7 +9,8 @@
      
     "removeComments": false,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "out",
+    "noEmitOnError": true,
+    "outDir": "./out",
     
     "types": ["jasmine","node"],
     "strict": true
