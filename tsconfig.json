@@ -10,8 +10,9 @@
     "removeComments": false,
     "forceConsistentCasingInFileNames": true,
     "outDir": "out",
-
-    "types": ["jasmine","node"]
+    
+    "types": ["jasmine","node"],
+    "strict": true
   },
 
   "exclude": [

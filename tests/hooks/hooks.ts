@@ -4,7 +4,8 @@ import { logger } from "../../config/logger";
 
 // Run before all the feature
 BeforeAll({ timeout: 60 * 1000 }, async () => {
-
+    browser.waitForAngularEnabled(true);
+    browser.manage().deleteAllCookies();
 })
 
 // Run before all the feature

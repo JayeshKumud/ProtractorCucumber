@@ -13,4 +13,9 @@ export class calculator{
         this.btn_Go = element(by.id("gobutton"));
         this.lbl_Header = element(by.css("h2"));
     }
+
+    setInputValues(first : string, second : string){
+        this.txt_first.sendKeys(first);
+        this.txt_second.sendKeys(second);
+    }
 }
