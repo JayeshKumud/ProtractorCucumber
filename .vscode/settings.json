@@ -1,10 +1,6 @@
 {
     "cucumberautocomplete.steps": [
-<<<<<<< HEAD
-        "./src/steps/*.ts"
-=======
         "./src/steps/*.ts",
->>>>>>> master
     ],
     "cucumberautocomplete.syncfeatures": "./src/features/*feature",
     "cucumberautocomplete.smartSnippets": true,
