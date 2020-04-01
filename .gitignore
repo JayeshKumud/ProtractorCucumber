@@ -1,4 +1,4 @@
 node_modules/
-logger/
+logs/
 out/
 Cucumber.json
