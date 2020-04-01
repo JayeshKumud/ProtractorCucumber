@@ -10,6 +10,7 @@
     "removeComments": false,
     "forceConsistentCasingInFileNames": true,
     "noEmitOnError": true,
+    "rootDir": "./",
     "outDir": "./out",
     
     "types": ["jasmine","node"],

@@ -13,7 +13,7 @@ export class alert {
         let alertText = alert.getText();
 
         alertText.then(function (txt) {
-            logger.Log().debug(txt);
+            logger.Log(txt);
         })
 
         browser.sleep(2000);

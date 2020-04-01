@@ -1,7 +1,7 @@
 import { Given, When, Then } from 'cucumber';
 import { browser, element, by } from 'protractor';
 import { calculator } from '../pages/calculator';
-import { logger } from '../../config/logger';
+import { logger, Level } from '../../config/logger';
 import chai from 'chai';
 
 
@@ -11,23 +11,23 @@ var expect = chai.expect;
 
 Given('I enter first number as {string}', async (value) => {
     await calc.txt_first.sendKeys(value);
-    logger.Log().debug("Set value for txt_first : " + value);
+    logger.Log("Set value for txt_first : " + value);
 });
 
 
 Given('I enter second number as {string}', async (value) => {
     await calc.txt_second.sendKeys(value);
-    logger.Log().debug("Set value for txt_second : " + value);
+    logger.Log("Set value for txt_second : " + value);
 });
 
 When('I click on {string} button', async (btnName) => {
     await calc.btn_Go.click();
-    logger.Log().debug("Click on Go button");
+    logger.Log("Click on Go button");
 });
 
 Then('I see {string} display as result', async (value) => {
     await calc.lbl_Header.getText().then((text) => {
         expect(text).to.equal(value);
-        logger.Log().debug("verified the display value : " + value);
+        logger.Log("verified the display value : " + value);
     })
 });

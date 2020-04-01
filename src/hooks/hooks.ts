@@ -22,7 +22,7 @@ Before({ tags: "@smoke" }, () => {
 });
 
 After({ tags: "@smoke" }, () => {
-    logger.Log().debug("Tag completed");
+    logger.Log('Tag completed');
 })
 
 
