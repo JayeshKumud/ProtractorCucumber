@@ -8,7 +8,7 @@
     "file" : {
         "category": "test-file-appender",
         "type": "file",
-        "filename": "logger/debugger/log.log",
+        "filename": "logs/debug/log.log",
         "maxLogSize": 10240,
         "backups": 3,
         "pattern":"%d %p %c %x{user} %m%n"
