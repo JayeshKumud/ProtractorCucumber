@@ -12,6 +12,8 @@
     "noEmitOnError": true,
     "rootDir": "./",
     "outDir": "./out",
+    "mapRoot": "./out",
+    "sourceMap": true,
     
     "types": ["jasmine","node"],
     "strict": true
