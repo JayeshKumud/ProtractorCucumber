@@ -8,7 +8,7 @@
         "webdriver-update": "./node_modules/protractor/bin/webdriver-manager update",
         "tsc": "tsc --build --clean && tsc",
         "pretest": "npm run tsc",
-        "test": "protractor out/src/config.js --suite calc"
+        "test": "protractor out/src/config.js --suite all"
     },
     "author": "Jayesh Kumud",
     "license": "ISC",

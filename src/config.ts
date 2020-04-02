@@ -27,9 +27,9 @@ export let config: Config = {
     tags: "@smoke",
     format: 'json:./Cucumber.json',
     
-    // require step definitions
+    // require step definitions -> ./steps/**/*.js and ./hooks/*.js
     require: [
-      './**/*.js',
+      './**/**/*.js',
     ]
   },
 
