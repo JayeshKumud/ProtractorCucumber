@@ -1,12 +1,9 @@
 {
-
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
-
     "resolveJsonModule": true,
     "esModuleInterop": true,
-     
     "removeComments": false,
     "forceConsistentCasingInFileNames": true,
     "noEmitOnError": true,
@@ -14,11 +11,12 @@
     "outDir": "./out",
     "mapRoot": "./out",
     "sourceMap": true,
-    
-    "types": ["jasmine","node"],
+    "types": [
+      "jasmine",
+      "node"
+    ],
     "strict": true
   },
-
   "exclude": [
     "node_modules/*"
   ]
