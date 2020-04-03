@@ -27,7 +27,7 @@ Given('I navigate to {string} page url', async (url) => {
     }
 });
 
-Given('I verify page title {string}', async (title) => {
+Given('I verify page title as {string}', async (title) => {
     await browser.getTitle().then((ttl) => {
         expect(ttl).to.equal(title);
         logger.Log("Browser Title is verified : " + title);

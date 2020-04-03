@@ -1,12 +1,14 @@
-import { Given, When, Then } from 'cucumber';
+import { Given, When, Then, TableDefinition } from 'cucumber';
 import { browser, element, by } from 'protractor';
 import { calculator } from '../../pages/calculator';
 import { logger, Level } from '../../../config/logger';
 import chai from 'chai';
+import { objects } from '../../util/objects';
 
 
 var calc = new calculator();
 var expect = chai.expect;
+var obj = new objects();
 
 
 Given('I enter first number as {string}', async (value) => {
@@ -30,4 +32,8 @@ Then('I see {string} display as result', async (value) => {
         expect(text).to.equal(value);
         logger.Log("verified the display value : " + value);
     })
+});
+
+Then('I do math operation using below data and verify results', async function (table: TableDefinition) {
+    await calc.mathOperation(table);
 });
