@@ -31,7 +31,7 @@ export class CalculatorPage extends ElemtHelper {
             await this.clearSendKeys(this.input_First, rows[i].first);
             await this.clearSendKeys(this.input_Second, rows[i].second);
             await this.click(this.btn_Go);
-            
+
             await this.lbl_Header.getText().then((text) => {
                 this.expect(text).to.equal(rows[i].result);
                 Logger.Log("verified the display value : " + rows[i].result);
