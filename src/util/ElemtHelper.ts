@@ -1,6 +1,6 @@
 import { urls } from '../testdata/environment.json'
 import { browser, ElementFinder, element, ExpectedConditions, protractor, by, ElementHelper } from 'protractor'
-import { Logger } from '../../config/Logger';
+import { Logger } from '../../config/ogger';
 
 export class ElemtHelper {
     private EC = protractor.ExpectedConditions;
