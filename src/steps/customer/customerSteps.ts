@@ -1,70 +1,18 @@
-import { Given, When, Then } from 'cucumber';
-import { browser, element, by } from 'protractor';
-import { calculator } from '../../pages/calculator';
-import { logger } from '../../../config/logger';
+import { Given, When, Then, TableDefinition } from 'cucumber';
 import chai from 'chai';
+import { CustomerPage } from '../../pages/CustomerPage';
 
-var calc = new calculator();
+var customerPage = new CustomerPage();
 var expect = chai.expect;
 
-
-Given('I click {string} on {string} page', function (string, string2) {
-    // Write code here that turns the phrase above into concrete actions
-    return 'pending';
+Given('I click Bank Manager login button on customer home page', async () => {
+    await customerPage.btn_BankManagerLogin.click();
 });
 
-
-
-Given('I navigate to {string} page', function (string) {
-    // Write code here that turns the phrase above into concrete actions
-    return 'pending';
+Given('I click Add Customer tab option on manager page', async () => {
+    await customerPage.tab_AddCustomer.click();
 });
 
-
-
-Given('I click Add Customer Tab on manager page', function () {
-    // Write code here that turns the phrase above into concrete actions
-    return 'pending';
-});
-
-
-
-Given('I navigate to {string} page', function (string) {
-    // Write code here that turns the phrase above into concrete actions
-    return 'pending';
-});
-
-
-
-Given('I enter first Name as {string}', function (string) {
-    // Write code here that turns the phrase above into concrete actions
-    return 'pending';
-});
-
-
-
-Given('I enter last Name as {string}', function (string) {
-    // Write code here that turns the phrase above into concrete actions
-    return 'pending';
-});
-
-
-
-Given('I enter post Code as {string}', function (string) {
-    // Write code here that turns the phrase above into concrete actions
-    return 'pending';
-});
-
-
-
-Given('I click {string} button', function (string) {
-    // Write code here that turns the phrase above into concrete actions
-    return 'pending';
-});
-
-
-
-Then('I see {string} alert message', function (string) {
-    // Write code here that turns the phrase above into concrete actions
-    return 'pending';
+Then('I created and verified customers with below test data', async (table: TableDefinition) => {
+    await customerPage.addCustomers(table);
 });

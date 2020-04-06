@@ -8,14 +8,19 @@
             "name": "Dedug Protractor Tests",
             "trace": true,
             "showAsyncStacks": true,
+
             "skipFiles": [
                 "<node_internals>/**"
             ],
+
             "program": "${workspaceFolder}/node_modules/protractor/bin/protractor",
+
             "args": [
                 "${workspaceFolder}/out/src/config.js"
             ],
+
             "preLaunchTask": "tsc: build - tsconfig.json",
+            
             "outFiles": [
                 "${workspaceFolder}/out/src/**/*.js"
             ],

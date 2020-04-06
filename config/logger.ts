@@ -1,4 +1,4 @@
-export class logger {
+export class Logger {
     static Log(message: any, level: Level = Level.debug): void {
 
         var log4js = require('log4js');

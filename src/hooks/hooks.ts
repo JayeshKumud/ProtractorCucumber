@@ -1,9 +1,10 @@
 import { Before, After, BeforeAll, Status, AfterAll, defineSupportCode } from "cucumber";
 import { browser } from "protractor";
-import { logger } from "../../config/logger";
+import { Logger } from "../../config/Logger";
 
 // Run before all the feature
 BeforeAll({ timeout: 60 * 1000 }, async () => {
+    browser.manage().timeouts().implicitlyWait(20 * 1000);
     browser.waitForAngularEnabled(true);
     browser.manage().deleteAllCookies();
 })
@@ -22,7 +23,7 @@ Before({ tags: "@smoke" }, () => {
 });
 
 After({ tags: "@smoke" }, () => {
-    logger.Log('Tag completed');
+    Logger.Log('Tag completed');
 })
 
 

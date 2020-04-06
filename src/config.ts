@@ -1,6 +1,8 @@
 import { Config } from 'protractor';
 import * as reporter from 'cucumber-html-reporter';
 
+var featurePath = '../../src/features/';
+
 export let config: Config = {
 
   // set to "custom" instead of cucumber.
@@ -11,25 +13,26 @@ export let config: Config = {
   frameworkPath: require.resolve('protractor-cucumber-framework'),
 
   suites: {
-    'calc': '../../src/features/calculator/*.feature',
-    'cust': '../../src/features/customer/*.feature',
-    'table': '../../src/features/table/*.feature',
-    'Two': ['../../src/features/calculator/*.feature', '../../src/features/customer/*.feature'],
-    'all':['../../src/features/**/*.feature']
+    'calc': featurePath + 'calculator/*.feature',
+    'cust': featurePath + 'customer/*.feature',
+    'table': featurePath + 'table/*.feature',
+    'Two': [featurePath + 'calculator/*.feature', featurePath + 'customer/*.feature'],
+    'all': [featurePath + '**/*.feature']
   },
 
-  // require feature files
+  // require feature files | Debug feature file which is passed
   specs: [
-    '../../src/features/**/*.feature'
+    featurePath + 'customer/*.feature'
   ],
 
   cucumberOpts: {
     tags: "@smoke",
     format: 'json:./Cucumber.json',
-    
+
     // require step definitions -> ./steps/**/*.js and ./hooks/*.js
     require: [
-      './**/**/*.js',
+      './steps/**/*.js',
+      './hooks/*.js'
     ]
   },
 
@@ -49,7 +52,7 @@ export let config: Config = {
       metadata: {
         "App Version": "0.3.2",
         "Test Environment": "STAGING",
-        "Browser": "Chrome  54.0.2840.98",
+        "Browser": "Chrome",
         "Platform": "Windows 10",
         "Parallel": "Scenarios",
         "Executed": "Remote"

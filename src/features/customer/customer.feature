@@ -3,21 +3,20 @@ Feature: Customer creation
 
     Background:
         Given I navigate to "bank" page url
-        And I verify page title as "Test"
+        And I verify page title as "Protractor practice website - Banking App"
 
     @smoke
-    Scenario: Create a customer
-        And I click Bank Manager login button
-        And I click Add Customer tab option
-        And I enter first Name as "ABC"
-        And I enter last Name as "XYZ"
-        And I enter post Code as "3232"
-        When I click Add Customer button
-        Then I see "Customer added successfully with customer id" alert message
+    Scenario: Create and verify customer
+        And I click Bank Manager login button on customer home page
+        When I click Add Customer tab option on manager page
+        Then I created and verified customers with below test data
+            | firstName | lastName | pstCode | message                     |
+            | ABC       | XYZ      | 421205  | customer added successfully |
+            | ABC       | XYZ      | 421205  | customer added successfully |
+            | ABC       | XYZ      | 421205  | customer added successfully |
 
-    @smoke
-    Scenario: Create and very customer
-        And I am Add Customer tab option
-        And I created customer with below test data
-            | firstName | lastName | pstCode |
-            | ABC       | XYZ      | 421205  |
+# @smoke
+# Scenario: Create and verify customer
+#     And I click Bank Manager login button on customer home page
+#     And I click Add Customer tab option on manager page
+#     Then I created customer with "cust_01" from "Customer.json" data

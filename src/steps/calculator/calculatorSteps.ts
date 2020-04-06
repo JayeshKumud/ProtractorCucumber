@@ -1,39 +1,43 @@
 import { Given, When, Then, TableDefinition } from 'cucumber';
-import { browser, element, by } from 'protractor';
-import { calculator } from '../../pages/calculator';
-import { logger, Level } from '../../../config/logger';
+import { CalculatorPage } from '../../pages/CalculatorPage';
+import { Logger, Level } from '../../../config/Logger';
 import chai from 'chai';
-import { objects } from '../../util/objects';
+import { ElemtHelper } from '../../util/ElemtHelper';
 
 
-var calc = new calculator();
-var expect = chai.expect;
-var obj = new objects();
+const calculatorPage: CalculatorPage = new CalculatorPage();
+const expect = chai.expect;
+const elemtHelper = new ElemtHelper();
 
 
 Given('I enter first number as {string}', async (value) => {
-    await calc.txt_first.sendKeys(value);
-    logger.Log("Set value for txt_first : " + value);
+    await calculatorPage.input_First.sendKeys(value).then(() => {
+        Logger.Log("Set value for txt_first : " + value);
+    });
 });
 
 
 Given('I enter second number as {string}', async (value) => {
-    await calc.txt_second.sendKeys(value);
-    logger.Log("Set value for txt_second : " + value);
+    await calculatorPage.input_Second.sendKeys(value).then(() => {
+        Logger.Log("Set value for txt_second : " + value);
+    });
 });
 
 When('I click on {string} button', async (btnName) => {
-    await calc.btn_Go.click();
-    logger.Log("Click on Go button");
+    await calculatorPage.btn_Go.click().then(() => {
+        Logger.Log("Click on Go button");
+    });
 });
 
 Then('I see {string} display as result', async (value) => {
-    await calc.lbl_Header.getText().then((text) => {
+    await calculatorPage.lbl_Header.getText().then((text) => {
         expect(text).to.equal(value);
-        logger.Log("verified the display value : " + value);
-    })
+        Logger.Log("verified the display value : " + value);
+    });
 });
 
-Then('I do math operation using below data and verify results', async function (table: TableDefinition) {
-    await calc.mathOperation(table);
+Then('I do math operation using below data and verify results', async (table: TableDefinition) => {
+    await calculatorPage.mathOperation(table).then(() => {
+        Logger.Log('Math Operation success')
+    });
 });

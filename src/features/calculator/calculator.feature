@@ -14,6 +14,7 @@ Feature: Calculator Operation
 
     @smoke
     Scenario: Addition of two high numbers
+        When I verify page title as "Super Calculator"
         Then I do math operation using below data and verify results
             | Operator | first | second | result |
             | +        | 5     | 5      | 10     |

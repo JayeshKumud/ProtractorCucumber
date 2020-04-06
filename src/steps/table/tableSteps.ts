@@ -1,5 +1,5 @@
 import { Given, TableDefinition } from "cucumber";
-import { logger } from "../../../config/logger";
+import { Logger } from "../../../config/Logger";
 import chai from 'chai';
 
 var expect = chai.expect;
@@ -7,7 +7,7 @@ var expect = chai.expect;
 Given('I enter below number', async (table : TableDefinition) => {
     table.rows().forEach((row) => {
         row.forEach((cell) => {
-            logger.Log(cell.toString());
+            Logger.Log(cell.toString());
             expect(cell).to.not.equal('1');
         })
     })

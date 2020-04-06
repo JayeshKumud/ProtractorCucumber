@@ -3,13 +3,15 @@
     "version": "1.0.0",
     "description": "bdd framework with protractor",
     "main": "index.js",
+
     "scripts": {
         "protractor": "./node_modules/protractor/build/cli.js",
-        "webdriver-update": "./node_modules/protractor/bin/webdriver-manager update",
+        "webdriver-update": "node ./node_modules/protractor/bin/webdriver-manager update",
         "tsc": "tsc --build --clean && tsc",
         "pretest": "npm run tsc",
-        "test": "protractor out/src/config.js --suite calc"
+        "test": "protractor out/src/config.js --suite Two"
     },
+
     "author": "Jayesh Kumud",
     "license": "ISC",
     "dependencies": {
@@ -18,12 +20,14 @@
         "chai": "~4.2.0",
         "typescript": "~3.8.3",
         "jasmine": "~3.5.0",
+        "jasminewd2": "2.2.0",
         "@types/jasmine": "~2.8.7",
         "@types/jasminewd2": "~2.0.3",
         "chai-as-promised": "7.1.1",
         "cucumber-html-reporter": "~5.2.0",
         "request": "2.88.2",
         "lodash": "4.17.15",
+        "navigator": "~1.0.1",
         "webdriver-manager": "12.1.7",
         "protractor-cucumber-framework": "~6.2.1",
         "log4js": "6.1.2",
