@@ -1,6 +1,6 @@
 import { by, ElementFinder, element } from 'protractor'
 import { TableDefinition } from 'cucumber';
-import { Logger } from '../../config/ogger';
+import { Logger } from '../../config/Logger';
 import { ElemtHelper } from '../util/ElemtHelper'
 import chai from 'chai';
 
