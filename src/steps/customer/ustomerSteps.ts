@@ -1,6 +1,6 @@
 import { Given, When, Then, TableDefinition } from 'cucumber';
 import chai from 'chai';
-import { CustomerPage } from '../../pages/CustomerPage';
+import { CustomerPage } from '../../pages/ustomerPage';
 
 var customerPage = new CustomerPage();
 var expect = chai.expect;
