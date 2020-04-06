@@ -1,6 +1,6 @@
 import { Given, When, Then, TableDefinition } from 'cucumber';
-import { CalculatorPage } from '../../pages/CalculatorPage';
-import { Logger, Level } from '../../../config/Logger';
+import { CalculatorPage } from '../../pages/alculatorPage';
+import { Logger, Level } from '../../../config/ogger';
 import chai from 'chai';
 import { ElemtHelper } from '../../util/ElemtHelper';
 

@@ -1,5 +1,5 @@
 import { Given, TableDefinition } from "cucumber";
-import { Logger } from "../../../config/Logger";
+import { Logger } from "../../../config/ogger";
 import chai from 'chai';
 
 var expect = chai.expect;
