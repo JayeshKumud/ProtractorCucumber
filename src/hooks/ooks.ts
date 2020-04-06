@@ -1,6 +1,6 @@
 import { Before, After, BeforeAll, Status, AfterAll, defineSupportCode } from "cucumber";
 import { browser } from "protractor";
-import { Logger } from "../../config/ogger";
+import { Logger } from "../../config/Logger";
 
 // Run before all the feature
 BeforeAll({ timeout: 60 * 1000 }, async () => {
