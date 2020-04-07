@@ -1,9 +1,11 @@
 {
     "customers": [
         {
-            "firstname": "ABC",
-            "lastname": "XYZ",
-            "postalcode": "12345",
+            "Id": "CUST_001",
+            "firstname": "JSON_ABC",
+            "lastname": "JSON_XYZ",
+            "postalcode": "JSON_12345",
+            "message": "customer added successfully",
             "mobile": {
                 "personal": 98267779,
                 "business": 87666789,
@@ -11,9 +13,11 @@
             }
         },
         {
+            "Id": "CUST_002",
             "firstname": "ABC",
             "lastname": "XYZ",
             "postalcode": "12345",
+            "message": "customer added successfully",
             "mobile": {
                 "personal": 98267779,
                 "business": 87666789,
