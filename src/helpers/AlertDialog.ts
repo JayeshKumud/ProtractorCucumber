@@ -1,6 +1,6 @@
 import { protractor } from "protractor/built/ptor";
 import { browser } from "protractor";
-import { Logger } from '../../config/Logger';
+import { Logger } from './Logger';
 import { expect } from "chai";
 
 export class AlertDialog {

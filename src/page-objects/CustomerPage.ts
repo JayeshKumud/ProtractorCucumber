@@ -1,6 +1,6 @@
 import { ElementFinder, element, by, browser } from "protractor";
 import { TableDefinition } from "cucumber";
-import { Logger } from "../../config/Logger";
+import { Logger } from "../helpers/Logger";
 import { AlertDialog } from "../helpers/AlertDialog";
 import { ElemtHelper } from "../helpers/ElemtHelper";
 

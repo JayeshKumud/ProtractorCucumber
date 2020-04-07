@@ -1,6 +1,6 @@
 import { Given } from 'cucumber';
 import { browser } from 'protractor';
-import { Logger } from '../../../config/Logger';
+import { Logger } from '../../helpers/Logger';
 import chai from 'chai';
 import { urls } from '../../testdata/environment.json'
 
