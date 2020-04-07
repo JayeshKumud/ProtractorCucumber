@@ -1,8 +1,33 @@
+
+
+var log4jsJson = {
+    "appenders": {
+        "console": {
+            "type": "console",
+            "category": "console"
+        },
+
+        "file": {
+            "category": "test-file-appender",
+            "type": "file",
+            "filename": "logs/debug/log.log",
+            "maxLogSize": 10240,
+            "backups": 3,
+            "pattern": "%d %p %c %x{user} %m%n"
+        }
+    },
+    "categories": {
+        "default": { "appenders": ["console", "file"], "level": "DEBUG" },
+        "file": { "appenders": ["file"], "level": "DEBUG" }
+    }
+}
+
 export class Logger {
+
     static Log(message: any, level: Level = Level.debug): void {
 
         var log4js = require('log4js');
-        log4js.configure('./config/log4js.json');
+        log4js.configure(log4jsJson);
         var log = log4js.getLogger(); //for both console and file
 
         if (level == Level.debug) {
