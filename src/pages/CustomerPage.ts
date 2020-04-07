@@ -32,15 +32,40 @@ export class CustomerPage extends ElemtHelper {
         this.input_PostCode = element(by.model('postCd'));
     }
 
-    async addCustomers(table: TableDefinition) {
-        var rows = table.hashes();
-        for (var i = 0; i < rows.length; i++) {
-            Logger.Log(rows[i].Operator);
-            await this.clearSendKeys(this.input_FirstName, rows[i].firstName);
-            await this.clearSendKeys(this.input_LastName, rows[i].lastName);
-            await this.clearSendKeys(this.input_PostCode, rows[i].pstCode);
-            await this.click(this.btn_AddCustomer);
-            await AlertDialog.verifyAndAcceptAlert(rows[i].message);
+    async addCustomer(firstName: string, lastName: string, pstCode: string, message: string) {
+        await this.clearSendKeys(this.input_FirstName, firstName);
+        await this.clearSendKeys(this.input_LastName, lastName);
+        await this.clearSendKeys(this.input_PostCode, pstCode);
+        await this.click(this.btn_AddCustomer);
+        await AlertDialog.verifyAndAcceptAlert(message);
+    }
+
+    async addCustomers(customers: TableDefinition) {
+
+        // check customers type, if TableDefinition is passed then operate accordingly
+        if ((<TableDefinition>customers).hashes() !== undefined) {
+
+            var tbl_customers = customers as TableDefinition;
+            var rows = tbl_customers.hashes();
+
+            for (var i = 0; i < rows.length; i++) {
+                await this.clearSendKeys(this.input_FirstName, rows[i].firstName);
+                await this.clearSendKeys(this.input_LastName, rows[i].lastName);
+                await this.clearSendKeys(this.input_PostCode, rows[i].pstCode);
+                await this.click(this.btn_AddCustomer);
+                await AlertDialog.verifyAndAcceptAlert(rows[i].message);
+            }
+        }
+        
+        // check customers type, if TableDefinition is passed then operate accordingly
+        else if (true){ 
+
+        }
+
+        // invalid data type is passed
+        else {
+            Logger.Log('Invalid data type is passed : ' + customers);
         }
     }
+
 }

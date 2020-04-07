@@ -1,9 +1,9 @@
-import { Given, When, Then, TableDefinition } from 'cucumber';
-import chai from 'chai';
+import { Given, Then, TableDefinition } from 'cucumber';
 import { CustomerPage } from '../../pages/CustomerPage';
+import { customers } from '../../testdata/customers.json'
+
 
 var customerPage = new CustomerPage();
-var expect = chai.expect;
 
 Given('I click Bank Manager login button on customer home page', async () => {
     await customerPage.btn_BankManagerLogin.click();
@@ -13,6 +13,23 @@ Given('I click Add Customer tab option on manager page', async () => {
     await customerPage.tab_AddCustomer.click();
 });
 
-Then('I created and verified customers with below test data', async (table: TableDefinition) => {
-    await customerPage.addCustomers(table);
+Then('I created and verified customers with below test data', async (customer: TableDefinition) => {
+    var row = customer.rowsHash();
+    await customerPage.addCustomer(row['firstName'], row['lastName'], row['pstCode'], row['message']);
+});
+
+Then('I created customer with {string} from data sheet', async (Id: string) => {
+
+    var map = new Map();
+    customers.filter(async (customer) => {
+        if (customer.Id === Id) {
+            map.set('firstName', customer.firstname);
+            map.set('lastName', customer.lastname);
+            map.set('pstCode', customer.postalcode);
+            map.set('message', customer.message);
+        }
+        return map;
+    });
+    
+    await customerPage.addCustomer(map.get('firstName'), map.get('lastName'), map.get('pstCode'), map.get('message'));
 });

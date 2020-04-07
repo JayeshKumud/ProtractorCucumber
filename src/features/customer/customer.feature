@@ -10,13 +10,13 @@ Feature: Customer creation
         And I click Bank Manager login button on customer home page
         When I click Add Customer tab option on manager page
         Then I created and verified customers with below test data
-            | firstName | lastName | pstCode | message                     |
-            | ABC       | XYZ      | 421205  | customer added successfully |
-            | ABC       | XYZ      | 421205  | customer added successfully |
-            | ABC       | XYZ      | 421205  | customer added successfully |
+            | firstName | ABC                         |
+            | lastName  | XYZ                         |
+            | pstCode   | 421205                      |
+            | message   | customer added successfully |
 
-# @smoke
-# Scenario: Create and verify customer
-#     And I click Bank Manager login button on customer home page
-#     And I click Add Customer tab option on manager page
-#     Then I created customer with "cust_01" from "Customer.json" data
+    @smoke
+    Scenario: Create and verify customer
+        And I click Bank Manager login button on customer home page
+        When I click Add Customer tab option on manager page
+        Then I created customer with "CUST_001" from data sheet
