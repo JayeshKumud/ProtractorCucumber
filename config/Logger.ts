@@ -1,3 +1,4 @@
+
 export class Logger {
     static Log(message: any, level: Level = Level.debug): void {
 

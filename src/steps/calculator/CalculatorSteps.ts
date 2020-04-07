@@ -1,8 +1,8 @@
 import { Given, When, Then, TableDefinition } from 'cucumber';
-import { CalculatorPage } from '../../pages/CalculatorPage';
+import { CalculatorPage } from '../../page-objects/CalculatorPage';
 import { Logger, Level } from '../../../config/Logger';
 import chai from 'chai';
-import { ElemtHelper } from '../../util/ElemtHelper';
+import { ElemtHelper } from '../../helpers/ElemtHelper';
 
 
 const calculatorPage: CalculatorPage = new CalculatorPage();
@@ -11,26 +11,26 @@ const elemtHelper = new ElemtHelper();
 
 
 Given('I enter first number as {string}', async (value) => {
-    await calculatorPage.input_First.sendKeys(value).then(() => {
+    await calculatorPage.txtFirst.sendKeys(value).then(() => {
         Logger.Log("Set value for txt_first : " + value);
     });
 });
 
 
 Given('I enter second number as {string}', async (value) => {
-    await calculatorPage.input_Second.sendKeys(value).then(() => {
+    await calculatorPage.txtSecond.sendKeys(value).then(() => {
         Logger.Log("Set value for txt_second : " + value);
     });
 });
 
 When('I click on {string} button', async (btnName) => {
-    await calculatorPage.btn_Go.click().then(() => {
+    await calculatorPage.btnGo.click().then(() => {
         Logger.Log("Click on Go button");
     });
 });
 
 Then('I see {string} display as result', async (value) => {
-    await calculatorPage.lbl_Header.getText().then((text) => {
+    await calculatorPage.lblHeader.getText().then((text) => {
         expect(text).to.equal(value);
         Logger.Log("verified the display value : " + value);
     });
