@@ -34,7 +34,7 @@ export class CalculatorPage extends ElemtHelper {
 
             await this.lblHeader.getText().then((text) => {
                 this.expect(text).to.equal(rows[i].result);
-                Logger.Log("verified the display value : " + rows[i].result);
+                Logger.log("verified the display value : " + rows[i].result);
             });
         }
     }

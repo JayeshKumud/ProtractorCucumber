@@ -7,25 +7,25 @@ export class ElemtHelper {
 
     async sendKeys(element: ElementFinder, txtValue: string) {
         await element.sendKeys(txtValue).then(() => {
-            Logger.Log('Clear and Set value : ' + txtValue + ' to element');
+            Logger.log('Clear and Set value : ' + txtValue + ' to element');
         });
     }
 
     async clearSendKeys(element: ElementFinder, txtValue: string) {
         await element.clear().then(() => element.sendKeys(txtValue)).then(() => {
-            Logger.Log('Set value : ' + txtValue + ' to element');
+            Logger.log('Set value : ' + txtValue + ' to element');
         });
     }
 
     async click(element: ElementFinder) {
         await element.click().then(() => {
-            Logger.Log('clicked element option');
+            Logger.log('clicked element option');
         })
     }
 
     async selectOption(select: ElementFinder, optionValue: string) {
         await select.element(by.cssContainingText('option', optionValue)).click().then(() => {
-            Logger.Log('Select option value : ' + optionValue + ' from element');
+            Logger.log('Select option value : ' + optionValue + ' from element');
         });
     }
 
@@ -45,7 +45,7 @@ export class ElemtHelper {
     async elementClickable(element: ElementFinder): Promise<ElementFinder> {
         await browser.wait(() => element.isElementPresent);
         await browser.wait(this.EC.elementToBeClickable(element)).then(() => {
-            Logger.Log('element : ' + + ' is clickable');
+            Logger.log('element : ' + + ' is clickable');
         });
         return element;
     }
