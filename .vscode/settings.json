@@ -1,27 +1,26 @@
 {
-    "comment-ts.replaceComments":true,
-    "comment-ts.todoComments":true,
-    "comment-ts.includeDescriptionTag":true,
-    "comment-ts.includeAuthorTag":true,
-    "comment-ts.authorName":"Jayesh Kumud",
-    "comment-ts.parseNames":true,
-    
-    "cucumberautocomplete.steps": [
-        "./src/steps/**/*.ts",
-    ],
-    "cucumberautocomplete.syncfeatures": "./src/features/*feature",
-    "cucumberautocomplete.smartSnippets": true,
-    "cucumberautocomplete.stepsInvariants": true,
-    "cucumberautocomplete.customParameters": [
-        {
-            "parameter": "{ab}",
-            "value": "(a|b)"
-        }
-    ],
-    "cucumberautocomplete.onTypeFormat": true,
-    "editor.quickSuggestions": {
-        "comments": false,
-        "strings": true,
-        "other": true
+  "editor.formatOnSave": true,
+  "comment-ts.replaceComments": true,
+  "comment-ts.todoComments": true,
+  "comment-ts.includeDescriptionTag": true,
+  "comment-ts.includeAuthorTag": true,
+  "comment-ts.authorName": "Jayesh Kumud",
+  "comment-ts.parseNames": true,
+
+  "cucumberautocomplete.steps": ["./src/steps/**/*.ts"],
+  "cucumberautocomplete.syncfeatures": "./src/features/*feature",
+  "cucumberautocomplete.smartSnippets": true,
+  "cucumberautocomplete.stepsInvariants": true,
+  "cucumberautocomplete.customParameters": [
+    {
+      "parameter": "{ab}",
+      "value": "(a|b)"
     }
+  ],
+  "cucumberautocomplete.onTypeFormat": true,
+  "editor.quickSuggestions": {
+    "comments": false,
+    "strings": true,
+    "other": true
+  }
 }

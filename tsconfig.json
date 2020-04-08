@@ -13,15 +13,9 @@
     "mapRoot": "./out",
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "types": [
-      "node"
-    ],
-    "typeRoots": [
-      "node_modules/@types",
-    ],
+    "types": ["node"],
+    "typeRoots": ["node_modules/@types"],
     "strict": true
   },
-  "exclude": [
-    "node_modules/*"
-  ]
+  "exclude": ["node_modules/*"]
 }
