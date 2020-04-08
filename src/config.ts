@@ -32,18 +32,17 @@ export let config: Config = {
     // require step definitions -> ./steps/**/*.js and ./hooks/*.js
     require: [
       './steps/**/*.js',
-      // './hooks/*.js'
     ]
   },
 
   capabilities: {
     browserName: 'chrome'
   },
-  
-/**
- * Options on complete
- */
-onComplete: () => {
+
+  /**
+   * Options on complete
+   */
+  onComplete: () => {
 
     var options = {
       theme: 'bootstrap',

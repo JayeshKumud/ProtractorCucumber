@@ -21,7 +21,7 @@ Given('I enter second number as {string}', async (value) => {
     });
 });
 
-When('I click on {string} button', async () => {
+When('I click on {string} button', async (button) => {
     await calculatorPage.btnGo.click().then(() => {
         Logger.log("Click on Go button");
     });
