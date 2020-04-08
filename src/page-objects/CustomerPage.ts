@@ -1,5 +1,5 @@
 import { ElementFinder, element, by, browser } from "protractor";
-import { TableDefinition } from "cucumber";
+import { TableDefinition, Then } from "cucumber";
 import { Logger } from "../helpers/Logger";
 import { AlertDialog } from "../helpers/AlertDialog";
 import { ElemtHelper } from "../helpers/ElemtHelper";
@@ -17,7 +17,7 @@ export class CustomerPage extends ElemtHelper {
     private txtFirstName: ElementFinder;
     private txtLastName: ElementFinder;
     private txtPostCode: ElementFinder;
-    
+
     /**
      * Creates an instance of customer page.
      */
@@ -60,6 +60,35 @@ export class CustomerPage extends ElemtHelper {
         if ((<TableDefinition>customers).hashes() !== undefined) {
 
             var tbl_customers = customers as TableDefinition;
+            var rows = tbl_customers.hashes();
+
+            for (var i = 0; i < rows.length; i++) {
+                await this.clearSendKeys(this.txtFirstName, rows[i].firstName);
+                await this.clearSendKeys(this.txtLastName, rows[i].lastName);
+                await this.clearSendKeys(this.txtPostCode, rows[i].pstCode);
+                await this.click(this.btnAddCustomer);
+                await AlertDialog.verifyAndAcceptAlert(rows[i].message);
+            }
+        }
+
+        // check customers type, if TableDefinition is passed then operate accordingly
+        else if (true) {
+
+        }
+
+        // invalid data type is passed
+        else {
+            Logger.log('Invalid data type is passed : ' + customers);
+        }
+    }
+
+
+    addCustomersGen = async <T>(customers: T) => {
+
+        // check customers type, if TableDefinition is passed then operate accordingly
+        if ((<TableDefinition><unknown>customers).hashes() !== undefined) {
+
+            var tbl_customers = customers as unknown as TableDefinition;
             var rows = tbl_customers.hashes();
 
             for (var i = 0; i < rows.length; i++) {

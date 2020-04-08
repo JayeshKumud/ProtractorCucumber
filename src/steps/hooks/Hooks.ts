@@ -4,6 +4,8 @@ import { Logger } from "../../helpers/Logger";
 
 // Run before all the features
 BeforeAll({ timeout: 60 * 1000 }, async () => {
+    // turn off limits by default
+    require('events').EventEmitter.defaultMaxListeners = 0
     browser.manage().timeouts().implicitlyWait(20 * 1000);
     browser.waitForAngularEnabled(true);
     browser.manage().deleteAllCookies();
@@ -30,7 +32,7 @@ After(async function (scenario) {
 
 // This hook will be executed before scenarios tagged with @smoke
 Before({ tags: "@smoke" }, () => {
-    
+
 });
 
 // This hook will be executed after scenarios tagged with @smoke
