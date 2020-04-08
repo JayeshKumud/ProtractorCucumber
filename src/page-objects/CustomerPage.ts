@@ -17,7 +17,10 @@ export class CustomerPage extends ElemtHelper {
     private txtFirstName: ElementFinder;
     private txtLastName: ElementFinder;
     private txtPostCode: ElementFinder;
-
+    
+    /**
+     * Creates an instance of customer page.
+     */
     constructor() {
         super();
         this.btnHome = element(by.css('.home'));
@@ -32,6 +35,13 @@ export class CustomerPage extends ElemtHelper {
         this.txtPostCode = element(by.model('postCd'));
     }
 
+    /**
+     * Adds customer
+     * @param firstName 
+     * @param lastName 
+     * @param pstCode 
+     * @param message 
+     */
     async addCustomer(firstName: string, lastName: string, pstCode: string, message: string) {
         await this.clearSendKeys(this.txtFirstName, firstName);
         await this.clearSendKeys(this.txtLastName, lastName);
@@ -40,6 +50,10 @@ export class CustomerPage extends ElemtHelper {
         await AlertDialog.verifyAndAcceptAlert(message);
     }
 
+    /**
+     * Adds customers
+     * @param customers 
+     */
     async addCustomers(customers: TableDefinition) {
 
         // check customers type, if TableDefinition is passed then operate accordingly

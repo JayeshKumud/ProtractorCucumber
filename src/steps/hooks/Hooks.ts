@@ -7,12 +7,12 @@ BeforeAll({ timeout: 60 * 1000 }, async () => {
     browser.manage().timeouts().implicitlyWait(20 * 1000);
     browser.waitForAngularEnabled(true);
     browser.manage().deleteAllCookies();
-})
+});
 
 // Run after all the features
 AfterAll({ timeout: 60 * 1000 }, async () => {
 
-})
+});
 
 // Run before each scenario
 Before(() => {
@@ -36,4 +36,4 @@ Before({ tags: "@smoke" }, () => {
 // This hook will be executed after scenarios tagged with @smoke
 After({ tags: "@smoke" }, () => {
     Logger.log('Tag completed');
-})
+});

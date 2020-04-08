@@ -39,8 +39,11 @@ export let config: Config = {
   capabilities: {
     browserName: 'chrome'
   },
-
-  onComplete: () => {
+  
+/**
+ * Options on complete
+ */
+onComplete: () => {
 
     var options = {
       theme: 'bootstrap',

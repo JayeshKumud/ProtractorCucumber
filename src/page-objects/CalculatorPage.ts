@@ -14,6 +14,9 @@ export class CalculatorPage extends ElemtHelper {
     public lblHeader: ElementFinder;
     private selectOperator: ElementFinder;
 
+    /**
+     * Creates an instance of calculator page.
+     */
     constructor() {
         super();
         this.txtFirst = element(by.model("first"));
@@ -23,6 +26,12 @@ export class CalculatorPage extends ElemtHelper {
         this.selectOperator = element(by.model('operator'));
     }
 
+    /**
+     * TODO: comment mathOperation
+     * @description Maths operation
+     * @author Jayesh Kumud
+     * @param table 
+     */
     async mathOperation(table: TableDefinition) {
         var rows = table.hashes();
 
@@ -39,6 +48,11 @@ export class CalculatorPage extends ElemtHelper {
         }
     }
 
+    /**
+     * Sets input values
+     * @param first 
+     * @param second 
+     */
     setInputValues(first: string, second: string) {
         this.txtFirst.sendKeys(first);
         this.txtSecond.sendKeys(second);

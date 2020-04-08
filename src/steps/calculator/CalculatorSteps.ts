@@ -1,13 +1,11 @@
 import { Given, When, Then, TableDefinition } from 'cucumber';
 import { CalculatorPage } from '../../page-objects/CalculatorPage';
-import { Logger, Level } from '../../helpers/Logger';
+import { Logger } from '../../helpers/Logger';
 import chai from 'chai';
-import { ElemtHelper } from '../../helpers/ElemtHelper';
 
 
 const calculatorPage: CalculatorPage = new CalculatorPage();
 const expect = chai.expect;
-const elemtHelper = new ElemtHelper();
 
 
 Given('I enter first number as {string}', async (value) => {
@@ -23,7 +21,7 @@ Given('I enter second number as {string}', async (value) => {
     });
 });
 
-When('I click on {string} button', async (btnName) => {
+When('I click on {string} button', async () => {
     await calculatorPage.btnGo.click().then(() => {
         Logger.log("Click on Go button");
     });
@@ -38,6 +36,6 @@ Then('I see {string} display as result', async (value) => {
 
 Then('I do math operation using below data and verify results', async (table: TableDefinition) => {
     await calculatorPage.mathOperation(table).then(() => {
-        Logger.log('Math Operation success')
+        Logger.log('Math Operation success');
     });
 });
