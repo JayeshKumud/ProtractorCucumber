@@ -2,7 +2,6 @@ import { Given, Then, TableDefinition } from 'cucumber';
 import { CustomerPage } from '../../page-objects/CustomerPage';
 import { customers } from '../../testdata/customers.json'
 
-
 var customerPage = new CustomerPage();
 
 Given('I click Bank Manager login button on customer home page', async () => {
@@ -19,17 +18,6 @@ Then('I created and verified customers with below test data', async (customer: T
 });
 
 Then('I created customer with {string} from data sheet', async (Id: string) => {
-
-    var map = new Map();
-    customers.filter(async (customer) => {
-        if (customer.Id === Id) {
-            map.set('firstName', customer.firstname);
-            map.set('lastName', customer.lastname);
-            map.set('pstCode', customer.postalcode);
-            map.set('message', customer.message);
-        }
-        return map;
-    });
-    
-    await customerPage.addCustomer(map.get('firstName'), map.get('lastName'), map.get('pstCode'), map.get('message'));
+    var customer = customers.filter((customer) => customer.Id === Id)[0];
+    await customerPage.addCustomer(customer.Id, customer.firstname, customer.lastname, customer.message);
 });

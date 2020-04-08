@@ -64,7 +64,7 @@ export class CustomerPage extends ElemtHelper {
 
         // invalid data type is passed
         else {
-            Logger.Log('Invalid data type is passed : ' + customers);
+            Logger.log('Invalid data type is passed : ' + customers);
         }
     }
 

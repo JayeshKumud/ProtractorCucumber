@@ -6,7 +6,6 @@ var log4jsJson = {
             "type": "console",
             "category": "console"
         },
-
         "file": {
             "category": "test-file-appender",
             "type": "file",
@@ -24,30 +23,30 @@ var log4jsJson = {
 
 export class Logger {
 
-    static Log(message: any, level: Level = Level.debug): void {
+    static log(message: any, level: Level = Level.debug): void {
 
         var log4js = require('log4js');
         log4js.configure(log4jsJson);
-        var log = log4js.getLogger(); //for both console and file
+        var _log = log4js.getLogger(); //for both console and file
 
         if (level == Level.debug) {
-            log.level = 'debug';
-            log.debug(message);
+            _log.level = 'debug';
+            _log.debug(message);
         } else if (level == Level.trace) {
-            log.level = 'trace';
-            log.trace(message);
+            _log.level = 'trace';
+            _log.trace(message);
         } else if (level == Level.warn) {
-            log.level = 'debug';
-            log.debug(message);
+            _log.level = 'debug';
+            _log.debug(message);
         } else if (level == Level.info) {
-            log.level = 'info';
-            log.info(message);
+            _log.level = 'info';
+            _log.info(message);
         } else if (level == Level.error) {
-            log.level = 'error';
-            log.error(message);
+            _log.level = 'error';
+            _log.error(message);
         } else if (level == Level.fatal) {
-            log.level = 'fatal';
-            log.fatal(message);
+            _log.level = 'fatal';
+            _log.fatal(message);
         }
     }
 }
