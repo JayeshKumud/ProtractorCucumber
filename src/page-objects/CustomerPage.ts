@@ -1,5 +1,5 @@
 import { ElementFinder, element, by, browser } from "protractor";
-import { TableDefinition } from "cucumber";
+import { TableDefinition, Then } from "cucumber";
 import { Logger } from "../helpers/Logger";
 import { AlertDialog } from "../helpers/AlertDialog";
 import { ElemtHelper } from "../helpers/ElemtHelper";
@@ -18,6 +18,9 @@ export class CustomerPage extends ElemtHelper {
     private txtLastName: ElementFinder;
     private txtPostCode: ElementFinder;
 
+    /**
+     * Creates an instance of customer page.
+     */
     constructor() {
         super();
         this.btnHome = element(by.css('.home'));
@@ -32,6 +35,15 @@ export class CustomerPage extends ElemtHelper {
         this.txtPostCode = element(by.model('postCd'));
     }
 
+    /**
+     * TODO: comment addCustomer
+     * @description Adds customer
+     * @author Jayesh Kumud
+     * @param firstName 
+     * @param lastName 
+     * @param pstCode 
+     * @param message 
+     */
     async addCustomer(firstName: string, lastName: string, pstCode: string, message: string) {
         await this.clearSendKeys(this.txtFirstName, firstName);
         await this.clearSendKeys(this.txtLastName, lastName);
@@ -40,13 +52,19 @@ export class CustomerPage extends ElemtHelper {
         await AlertDialog.verifyAndAcceptAlert(message);
     }
 
-    async addCustomers(customers: TableDefinition) {
+    /**
+     * TODO: comment addCustomersGen
+     * @description Add customers gen of customer page
+     * @author Jayesh Kumud
+     * @param customers is generic type, but it can only be TableDefinition or ABC
+     */
+    addCustomers = async <T>(customers: T) => {
 
         // check customers type, if TableDefinition is passed then operate accordingly
-        if ((<TableDefinition>customers).hashes() !== undefined) {
+        if ((<TableDefinition><unknown>customers).hashes() !== undefined) {
 
-            var tbl_customers = customers as TableDefinition;
-            var rows = tbl_customers.hashes();
+            var tblcustomers = customers as unknown as TableDefinition;
+            var rows = tblcustomers.hashes();
 
             for (var i = 0; i < rows.length; i++) {
                 await this.clearSendKeys(this.txtFirstName, rows[i].firstName);
@@ -67,5 +85,4 @@ export class CustomerPage extends ElemtHelper {
             Logger.log('Invalid data type is passed : ' + customers);
         }
     }
-
 }

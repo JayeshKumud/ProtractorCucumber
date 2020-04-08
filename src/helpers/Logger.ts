@@ -23,6 +23,11 @@ var log4jsJson = {
 
 export class Logger {
 
+    /**
+     * Logs logger
+     * @param message 
+     * @param [level] 
+     */
     static log(message: any, level: Level = Level.debug): void {
 
         var log4js = require('log4js');

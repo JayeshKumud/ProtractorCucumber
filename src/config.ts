@@ -32,7 +32,6 @@ export let config: Config = {
     // require step definitions -> ./steps/**/*.js and ./hooks/*.js
     require: [
       './steps/**/*.js',
-      // './hooks/*.js'
     ]
   },
 
@@ -40,6 +39,9 @@ export let config: Config = {
     browserName: 'chrome'
   },
 
+  /**
+   * Options on complete
+   */
   onComplete: () => {
 
     var options = {

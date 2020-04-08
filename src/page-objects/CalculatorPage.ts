@@ -14,6 +14,9 @@ export class CalculatorPage extends ElemtHelper {
     public lblHeader: ElementFinder;
     private selectOperator: ElementFinder;
 
+    /**
+     * Creates an instance of calculator page.
+     */
     constructor() {
         super();
         this.txtFirst = element(by.model("first"));
@@ -23,22 +26,46 @@ export class CalculatorPage extends ElemtHelper {
         this.selectOperator = element(by.model('operator'));
     }
 
-    async mathOperation(table: TableDefinition) {
-        var rows = table.hashes();
+    /**
+     * TODO: comment mathOperation
+     * @description Math operation of calculator page
+     * @author Jayesh Kumud
+     * @param is generic type but this can be only TableDefinition or ABC
+     */
+    mathOperation = async <T>(opsdata: T) => {
 
-        for (var i = 0; i < rows.length; i++) {
-            await this.selectOption(this.selectOperator, rows[i].Operator)
-            await this.clearSendKeys(this.txtFirst, rows[i].first);
-            await this.clearSendKeys(this.txtSecond, rows[i].second);
-            await this.click(this.btnGo);
+        // check opsdata type, if TableDefinition is passed then operate accordingly
+        if ((<TableDefinition><unknown>opsdata).hashes() !== undefined) {
 
-            await this.lblHeader.getText().then((text) => {
-                this.expect(text).to.equal(rows[i].result);
-                Logger.log("verified the display value : " + rows[i].result);
-            });
+            var tblopsdata = opsdata as unknown as TableDefinition;
+            var rows = tblopsdata.hashes();
+
+            for (var i = 0; i < rows.length; i++) {
+                await this.selectOption(this.selectOperator, rows[i].Operator)
+                await this.clearSendKeys(this.txtFirst, rows[i].first);
+                await this.clearSendKeys(this.txtSecond, rows[i].second);
+                await this.click(this.btnGo);
+
+                await this.lblHeader.getText().then((text) => {
+                    this.expect(text).to.equal(rows[i].result);
+                    Logger.log("verified the display value : " + rows[i].result);
+                });
+            }
+        }
+
+        // invalid data type is passed
+        else {
+            Logger.log('Invalid data type is passed : ' + opsdata);
         }
     }
 
+    /**
+     * TODO: comment setInputValues
+     * @description Sets input values
+     * @author Jayesh Kumud
+     * @param first 
+     * @param second 
+     */
     setInputValues(first: string, second: string) {
         this.txtFirst.sendKeys(first);
         this.txtSecond.sendKeys(second);
