@@ -18,12 +18,15 @@ export let config: Config = {
         //args: ["--headless"],
         args: ["--safe-mode"],
       },
+
       //browserName: "chrome",
-      shardTestFiles: true,
-      maxInstances: 3,
       // chromeOptions: {
       //   args: ["disable-infobars"],
       // },
+
+      shardTestFiles: true,
+      maxInstances: 3,
+
       metadata: {
         browser: {
           name: "chrome",
