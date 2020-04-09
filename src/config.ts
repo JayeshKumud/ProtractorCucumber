@@ -55,9 +55,6 @@ export let config: Config = {
   specs: [featurePath + "customer/*.feature"],
 
   cucumberOpts: {
-    compiler: "ts:ts-node/register",
-    strict: true,
-    parallelTypes: ["features"],
     tags: "@smoke",
     format: "json:./logs/Cucumber.json",
     require: ["./steps/**/*.js"],
@@ -69,6 +66,9 @@ export let config: Config = {
       options: {
         automaticallyGenerateReport: true,
         removeExistingJsonReportFile: true,
+        removeOriginalJsonReportFile: true,
+        displayDuration: true,
+        //reportName: "/report.html",
       },
     },
   ],
