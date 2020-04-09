@@ -31,7 +31,7 @@ export class CalculatorPage extends ElemtHelper {
    * @author Jayesh Kumud
    * @param is generic type but this can be only TableDefinition or ABC
    */
-  mathOperation = async <T>(opsdata: T) => {
+  mathOperation = async <T extends TableDefinition | string>(opsdata: T) => {
     // check opsdata type, if TableDefinition is passed then operate accordingly
     if ((<TableDefinition>(<unknown>opsdata)).hashes() !== undefined) {
       var tblopsdata = (opsdata as unknown) as TableDefinition;
@@ -52,6 +52,9 @@ export class CalculatorPage extends ElemtHelper {
 
     // invalid data type is passed
     else {
+      this.setInputValues({ first: "", last: "", operator: "" });
+      this.setInputValues({ first: "", last: "" });
+      this.setInputValues({ first: "", operator: "10" });
       Logger.log("Invalid data type is passed : " + opsdata);
     }
   };
@@ -63,8 +66,19 @@ export class CalculatorPage extends ElemtHelper {
    * @param first
    * @param second
    */
-  setInputValues(first: string, second: string) {
-    this.txtFirst.sendKeys(first);
-    this.txtSecond.sendKeys(second);
-  }
+  setInputValues = <T extends values>(data: T) => {
+    this.txtFirst.sendKeys(data.first);
+    if (data.last) {
+      this.txtSecond.sendKeys(data.last);
+    }
+    if (data.operator) {
+      this.txtSecond.sendKeys(data.operator);
+    }
+  };
+}
+
+interface values {
+  first: string;
+  last?: string;
+  operator?: string;
 }

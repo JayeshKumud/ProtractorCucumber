@@ -16,21 +16,21 @@ Then(
   "I created and verified customers with below test data",
   async (customer: TableDefinition) => {
     var row = customer.rowsHash();
-    await customerPage.addCustomer(
-      row["firstName"],
-      row["lastName"],
-      row["pstCode"],
-      row["message"]
-    );
+    await customerPage.addCustomer({
+      firstName: row["firstName"],
+      lastName: row["lastName"],
+      postCode: row["postCode"],
+      message: row["message"],
+    });
   }
 );
 
 Then("I created customer with {string} from data sheet", async (Id: string) => {
   var customer = customers.filter((customer) => customer.Id === Id)[0];
-  await customerPage.addCustomer(
-    customer.Id,
-    customer.firstname,
-    customer.lastname,
-    customer.message
-  );
+  await customerPage.addCustomer({
+    firstName: customer.firstname,
+    lastName: customer.firstname,
+    postCode: customer.postalcode,
+    message: customer.message,
+  });
 });

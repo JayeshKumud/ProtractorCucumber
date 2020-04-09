@@ -42,18 +42,22 @@ export class CustomerPage extends ElemtHelper {
    * @param pstCode
    * @param message
    */
-  async addCustomer(
-    firstName: string,
-    lastName: string,
-    pstCode: string,
-    message: string
-  ) {
-    await this.clearSendKeys(this.txtFirstName, firstName);
-    await this.clearSendKeys(this.txtLastName, lastName);
-    await this.clearSendKeys(this.txtPostCode, pstCode);
+  addCustomer = async <
+    T extends {
+      firstName: string;
+      lastName: string;
+      postCode: string;
+      message: string;
+    }
+  >(
+    custRec: T
+  ) => {
+    await this.clearSendKeys(this.txtFirstName, custRec.firstName);
+    await this.clearSendKeys(this.txtLastName, custRec.lastName);
+    await this.clearSendKeys(this.txtPostCode, custRec.postCode);
     await this.click(this.btnAddCustomer);
-    await AlertDialog.verifyAndAcceptAlert(message);
-  }
+    await AlertDialog.verifyAndAcceptAlert(custRec.message);
+  };
 
   /**
    * TODO: comment addCustomersGen
@@ -61,7 +65,7 @@ export class CustomerPage extends ElemtHelper {
    * @author Jayesh Kumud
    * @param customers is generic type, but it can only be TableDefinition or ABC
    */
-  addCustomers = async <T>(customers: T) => {
+  addCustomers = async <T extends TableDefinition | string>(customers: T) => {
     // check customers type, if TableDefinition is passed then operate accordingly
     if ((<TableDefinition>(<unknown>customers)).hashes() !== undefined) {
       var tblcustomers = (customers as unknown) as TableDefinition;
