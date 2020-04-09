@@ -23,7 +23,7 @@ export class ElemtHelper {
    * @param element
    * @param txtValue
    */
-  async clearSendKeys(element: ElementFinder, txtValue: string) {
+  async clearSendKeys(element: ElementFinder, txtValue: string | number) {
     await element
       .clear()
       .then(() => element.sendKeys(txtValue))

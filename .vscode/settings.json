@@ -1,11 +1,11 @@
 {
-  "editor.formatOnSave": true,
   "comment-ts.replaceComments": true,
   "comment-ts.todoComments": true,
   "comment-ts.includeDescriptionTag": true,
   "comment-ts.includeAuthorTag": true,
   "comment-ts.authorName": "Jayesh Kumud",
   "comment-ts.parseNames": true,
+  "comment-ts.scoped": true,
 
   "cucumberautocomplete.steps": ["./src/steps/**/*.ts"],
   "cucumberautocomplete.syncfeatures": "./src/features/*feature",

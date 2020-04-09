@@ -52,19 +52,13 @@ export class CalculatorPage extends ElemtHelper {
 
     // invalid data type is passed
     else {
-      this.setInputValues({ first: "", last: "", operator: "" });
-      this.setInputValues({ first: "", last: "" });
-      this.setInputValues({ first: "", operator: "10" });
       Logger.log("Invalid data type is passed : " + opsdata);
     }
   };
-
   /**
    * TODO: comment setInputValues
-   * @description Sets input values
-   * @author Jayesh Kumud
-   * @param first
-   * @param second
+   * @description Set input values of calculator page
+   * @param
    */
   setInputValues = <T extends values>(data: T) => {
     this.txtFirst.sendKeys(data.first);
@@ -76,7 +70,11 @@ export class CalculatorPage extends ElemtHelper {
     }
   };
 }
-
+/**
+ * TODO: comment values
+ * @description Values
+ * @author Jayesh Kumud
+ */
 interface values {
   first: string;
   last?: string;

@@ -52,11 +52,13 @@ export class CustomerPage extends ElemtHelper {
   >(
     custRec: T
   ) => {
-    await this.clearSendKeys(this.txtFirstName, custRec.firstName);
-    await this.clearSendKeys(this.txtLastName, custRec.lastName);
-    await this.clearSendKeys(this.txtPostCode, custRec.postCode);
-    await this.click(this.btnAddCustomer);
-    await AlertDialog.verifyAndAcceptAlert(custRec.message);
+    if (custRec.firstName) {
+      await this.clearSendKeys(this.txtFirstName, custRec.firstName);
+      await this.clearSendKeys(this.txtLastName, custRec.lastName);
+      await this.clearSendKeys(this.txtPostCode, custRec.postCode);
+      await this.click(this.btnAddCustomer);
+      await AlertDialog.verifyAndAcceptAlert(custRec.message);
+    }
   };
 
   /**

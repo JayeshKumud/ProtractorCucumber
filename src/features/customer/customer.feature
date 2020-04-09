@@ -12,7 +12,7 @@ Feature: Customer creation
         Then I created and verified customers with below test data
             | firstName | ABC                         |
             | lastName  | XYZ                         |
-            | pstCode   | 421205                      |
+            | postCode  | 421234                      |
             | message   | customer added successfully |
 
     @smoke
