@@ -8,7 +8,7 @@
     "webdriver-update": "node ./node_modules/protractor/bin/webdriver-manager update",
     "tsc": "tsc --build --clean && tsc",
     "pretest": "npm run tsc",
-    "test": "protractor out/src/config.js --suite cust"
+    "test": "protractor out/src/config.js --suite all"
   },
   "author": "Jayesh Kumud",
   "license": "ISC",
@@ -33,15 +33,18 @@
     "hashmap": "2.4.0"
   },
   "devDependencies": {
-    "@types/protractor": "4.0.0",
-    "@types/cucumber": "~6.0.1",
     "@types/chai": "4.2.11",
-    "@types/typescript": "~2.0.0",
     "@types/chai-as-promised": "7.1.2",
+    "@types/cucumber": "~6.0.1",
     "@types/cucumber-html-reporter": "5.0.1",
-    "@types/request": "2.48.4",
+    "@types/hashmap": "2.3.0",
     "@types/lodash": "4.14.149",
-    "@types/node": "~13.11.0",
-    "@types/hashmap": "2.3.0"
+    "@types/node": "~13.11.1",
+    "@types/protractor": "4.0.0",
+    "@types/request": "2.48.4",
+    "@types/typescript": "~2.0.0",
+    "cucumber-parallel": "^2.0.3",
+    "parallel-cucumber": "^1.1.0",
+    "protractor-multiple-cucumber-html-reporter-plugin": "^1.8.1"
   }
 }

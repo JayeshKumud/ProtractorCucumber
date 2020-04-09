@@ -11,6 +11,33 @@ export let config: Config = {
   // path relative to the current config file
   frameworkPath: require.resolve("protractor-cucumber-framework"),
 
+  multiCapabilities: [
+    {
+      browserName: "firefox",
+      "moz:firefoxOptions": {
+        //args: ["--headless"],
+        args: ["--safe-mode"],
+      },
+      //browserName: "chrome",
+      shardTestFiles: true,
+      maxInstances: 3,
+      // chromeOptions: {
+      //   args: ["disable-infobars"],
+      // },
+      metadata: {
+        browser: {
+          name: "chrome",
+          version: "58",
+        },
+        device: "Windows",
+        platform: {
+          name: "Windows 10",
+          version: "--",
+        },
+      },
+    },
+  ],
+
   suites: {
     calc: featurePath + "calculator/*.feature",
     cust: featurePath + "customer/*.feature",
@@ -26,41 +53,21 @@ export let config: Config = {
   specs: [featurePath + "customer/*.feature"],
 
   cucumberOpts: {
+    compiler: "ts:ts-node/register",
+    strict: true,
+    parallelTypes: ["features"],
     tags: "@smoke",
-    format: "json:./Cucumber.json",
-
-    // require step definitions -> ./steps/**/*.js and ./hooks/*.js
+    format: "json:./logs/Cucumber.json",
     require: ["./steps/**/*.js"],
   },
 
-  capabilities: {
-    browserName: "chrome",
-  },
-
-  /**
-   * Options on complete
-   */
-  onComplete: () => {
-    var options = {
-      theme: "bootstrap",
-      jsonFile: "./Cucumber.json",
-      output: "./logs/report/report.html",
-      reportSuiteAsScenarios: true,
-      scenarioTimestamp: true,
-      launchReport: false,
-      metadata: {
-        "App Version": "0.3.2",
-        "Test Environment": "STAGING",
-        Browser: "Chrome",
-        Platform: "Windows 10",
-        Parallel: "Scenarios",
-        Executed: "Remote",
+  plugins: [
+    {
+      package: "protractor-multiple-cucumber-html-reporter-plugin",
+      options: {
+        automaticallyGenerateReport: true,
+        removeExistingJsonReportFile: true,
       },
-    };
-
-    reporter.generate(options);
-
-    //more info on `metadata` is available in `options` section below.
-    //to generate consodilated report from multi-cucumber JSON files, please use `jsonDir` option instead of `jsonFile`. More info is available in `options` section below.
-  },
+    },
+  ],
 };
