@@ -4,8 +4,6 @@ import { Logger } from "../../helpers/Logger";
 
 // Run before all the features
 BeforeAll({ timeout: 60 * 1000 }, async () => {
-  // turn off limits by default
-  require("events").EventEmitter.defaultMaxListeners = 0;
   browser
     .manage()
     .timeouts()

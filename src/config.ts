@@ -1,5 +1,4 @@
 import { Config } from "protractor";
-import * as reporter from "cucumber-html-reporter";
 
 var featurePath = "../../src/features/";
 
@@ -65,7 +64,7 @@ export let config: Config = {
       options: {
         automaticallyGenerateReport: true,
         removeExistingJsonReportFile: true,
-        removeOriginalJsonReportFile: true,
+        //removeOriginalJsonReportFile: true,
         displayDuration: true,
         reportName: "report.html",
       },
