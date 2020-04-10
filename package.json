@@ -8,7 +8,7 @@
     "webdriver-update": "node ./node_modules/protractor/bin/webdriver-manager update",
     "pretest": "rimraf logs/**/*.json && rimraf logs/report/features/*.html && npm run tsc",
     "tsc": "tsc --build --clean && tsc",
-    "test": "protractor out/src/config.js --suite table"
+    "test": "protractor out/src/config.js --suite calc"
   },
   "author": "Jayesh Kumud",
   "license": "ISC",
