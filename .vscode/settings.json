@@ -7,8 +7,8 @@
   "comment-ts.parseNames": true,
   "comment-ts.scoped": true,
 
-  "cucumberautocomplete.steps": ["./src/steps/**/*.ts"],
-  "cucumberautocomplete.syncfeatures": "./src/features/*feature",
+  "cucumberautocomplete.steps": ["./test/steps/**/*.ts"],
+  "cucumberautocomplete.syncfeatures": "./test/features/*feature",
   "cucumberautocomplete.smartSnippets": true,
   "cucumberautocomplete.stepsInvariants": true,
   "cucumberautocomplete.customParameters": [

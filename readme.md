@@ -46,7 +46,7 @@ Click settings(gear icon)->
 click Script console on left and type in the following command:
 System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "")
 
-https://stackoverflow.com/questions/35783964/jenkins-html-publisher-plugin-no-css-is-displayed-when-report-is-viewed-in-j
+https://kb.froglogic.com/squish/integrations/jenkins/content-security-policy-csp-web-report/
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
