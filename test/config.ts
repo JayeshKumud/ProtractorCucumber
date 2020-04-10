@@ -1,6 +1,6 @@
 import { Config } from "protractor";
 
-var featurePath = "../../src/features/";
+var featurePath = "../../test/features/";
 
 export let config: Config = {
   framework: "custom",
@@ -14,7 +14,7 @@ export let config: Config = {
       // browserName: "firefox",
       // "moz:firefoxOptions": {
       //   //args: ["--headless"],
-      //   args: ["--safe-mode"],
+      //   args: ["--safe-mode"],ssss
       // },
 
       browserName: "chrome",
@@ -30,10 +30,10 @@ export let config: Config = {
           name: "chrome",
           version: "58",
         },
-        device: "Windows",
+        device: "Windows Desktop",
         platform: {
-          name: "Windows 10",
-          version: "--",
+          name: "Windows",
+          version: "Windows 10",
         },
       },
     },
@@ -65,7 +65,7 @@ export let config: Config = {
       options: {
         automaticallyGenerateReport: true,
         removeExistingJsonReportFile: true,
-        //removeOriginalJsonReportFile: true,
+        removeOriginalJsonReportFile: true,
         displayDuration: true,
         reportName: "report.html",
       },

@@ -3,22 +3,15 @@ import { browser } from "protractor";
 import { Logger } from "../../helpers/Logger";
 
 // Run before all the features
-BeforeAll({ timeout: 60 * 1000 }, async () => {
-  browser
-    .manage()
-    .timeouts()
-    .implicitlyWait(20 * 1000);
-  browser.waitForAngularEnabled(true);
-  browser.manage().deleteAllCookies();
-});
+BeforeAll({ timeout: 60 * 1000 }, async () => {});
 
 // Run after all the features
-AfterAll({ timeout: 60 * 1000 }, async () => {});
+AfterAll(async () => {
+  browser.quit();
+});
 
 // Run before each scenario
-Before(() => {
-  browser.manage().window().maximize();
-});
+Before(() => {});
 
 // Run after each scenario
 After(async function (scenario) {
