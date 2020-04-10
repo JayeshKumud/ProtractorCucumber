@@ -3,8 +3,10 @@ import { browser } from "protractor";
 import { Logger } from "../../helpers/Logger";
 import chai from "chai";
 import { urls } from "../../testdata/data/environment.json";
+import { ElemtHelper } from "../../helpers/ElemtHelper";
 
 var expect = chai.expect;
+const elemtHelper = new ElemtHelper();
 
 Given("I navigate to {string} page url", async (url: string) => {
   switch (url) {
@@ -25,6 +27,8 @@ Given("I navigate to {string} page url", async (url: string) => {
       break;
     }
   }
+  // maximize window, wait For Angular Enabled, delete cookie, and implicit Wait
+  elemtHelper.setBrowser(true, 10);
 });
 
 Given("I verify page title as {string}", async (title) => {

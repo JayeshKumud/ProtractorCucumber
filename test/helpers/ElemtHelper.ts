@@ -8,6 +8,30 @@ export class ElemtHelper {
   private EC = protractor.ExpectedConditions;
 
   /**
+   * TODO: comment description
+   * @description Sets browser
+   * @author Jayesh Kumud
+   * @param wait For Angular Enabled
+   * @param implicitly Wait : wait for any control
+   * @param delete All Cookies
+   * @param [winMaximize]
+   */
+  async setBrowser(
+    waitForAngularEnabled: boolean,
+    implicitlyWait: number,
+    deleteAllCookies: boolean = true,
+    winMaximize: boolean = true
+  ) {
+    browser.manage().deleteAllCookies();
+    browser.manage().window().maximize();
+    browser
+      .manage()
+      .timeouts()
+      .implicitlyWait(implicitlyWait * 1000);
+    browser.waitForAngularEnabled(waitForAngularEnabled);
+  }
+
+  /**
    * Sends keys
    * @param element
    * @param txtValue
