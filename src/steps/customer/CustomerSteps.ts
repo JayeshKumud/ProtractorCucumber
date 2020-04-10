@@ -1,6 +1,6 @@
 import { Given, Then, TableDefinition } from "cucumber";
 import { CustomerPage } from "../../page-objects/CustomerPage";
-import { customers } from "../../testdata/customers.json";
+import { customers } from "../../testdata/data/customers.json";
 
 var customerPage = new CustomerPage();
 

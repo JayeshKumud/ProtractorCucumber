@@ -38,7 +38,11 @@ If you just downloaded the project without the node_modules dependencies and you
 
 npm install
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+If you want to completely remove the node_modules directory and want to do a fresh npm install
+
+rm -rf node_modules && npm install
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Code for single thread repot generation
 
