@@ -2,7 +2,7 @@ import { Given } from "cucumber";
 import { browser } from "protractor";
 import { Logger } from "../../helpers/Logger";
 import chai from "chai";
-import { urls } from "../../testdata/environment.json";
+import { urls } from "../../testdata/data/environment.json";
 
 var expect = chai.expect;
 

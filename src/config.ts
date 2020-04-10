@@ -1,10 +1,8 @@
 import { Config } from "protractor";
-import * as reporter from "cucumber-html-reporter";
 
 var featurePath = "../../src/features/";
 
 export let config: Config = {
-  // set to "custom" instead of cucumber.
   framework: "custom",
   directConnect: true,
 
@@ -13,16 +11,16 @@ export let config: Config = {
 
   multiCapabilities: [
     {
-      browserName: "firefox",
-      "moz:firefoxOptions": {
-        //args: ["--headless"],
-        args: ["--safe-mode"],
-      },
-
-      //browserName: "chrome",
-      // chromeOptions: {
-      //   args: ["disable-infobars"],
+      // browserName: "firefox",
+      // "moz:firefoxOptions": {
+      //   //args: ["--headless"],
+      //   args: ["--safe-mode"],
       // },
+
+      browserName: "chrome",
+      chromeOptions: {
+        args: ["disable-infobars"],
+      },
 
       shardTestFiles: true,
       maxInstances: 3,
@@ -67,9 +65,9 @@ export let config: Config = {
       options: {
         automaticallyGenerateReport: true,
         removeExistingJsonReportFile: true,
-        removeOriginalJsonReportFile: true,
+        //removeOriginalJsonReportFile: true,
         displayDuration: true,
-        //reportName: "report.html",
+        reportName: "report.html",
       },
     },
   ],
