@@ -45,6 +45,7 @@
     "@types/typescript": "~2.0.0",
     "cucumber-parallel": "^2.0.3",
     "parallel-cucumber": "^1.1.0",
-    "protractor-multiple-cucumber-html-reporter-plugin": "^1.8.1"
+    "protractor-multiple-cucumber-html-reporter-plugin": "^1.8.1",
+    "multiple-cucumber-html-reporter": "^1.16.1"
   }
 }

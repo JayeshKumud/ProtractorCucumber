@@ -67,7 +67,7 @@ export let config: Config = {
         removeExistingJsonReportFile: true,
         removeOriginalJsonReportFile: true,
         displayDuration: true,
-        //reportName: "report.html",
+        reportName: "report.html",
       },
     },
   ],

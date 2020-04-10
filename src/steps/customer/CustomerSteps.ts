@@ -27,7 +27,7 @@ Then(
 
 Then("I created customer with {string} from data sheet", async (Id: string) => {
   var customer = customers.filter((customer) => customer.Id === Id)[0];
-  await customerPage.addCustomer({
+  await customerPage.addCustomerUsingInterface({
     firstName: customer.firstname,
     lastName: customer.firstname,
     postCode: customer.postalcode,

@@ -3,6 +3,7 @@ import { TableDefinition, Then } from "cucumber";
 import { Logger } from "../helpers/Logger";
 import { AlertDialog } from "../helpers/AlertDialog";
 import { ElemtHelper } from "../helpers/ElemtHelper";
+import { iCustomer } from "../testdata/type/iCustomer";
 
 export class CustomerPage extends ElemtHelper {
   private btnHome: ElementFinder;
@@ -52,12 +53,33 @@ export class CustomerPage extends ElemtHelper {
   >(
     custRec: T
   ) => {
-    if (custRec.firstName) {
-      await this.clearSendKeys(this.txtFirstName, custRec.firstName);
-      await this.clearSendKeys(this.txtLastName, custRec.lastName);
-      await this.clearSendKeys(this.txtPostCode, custRec.postCode);
-      await this.click(this.btnAddCustomer);
-      await AlertDialog.verifyAndAcceptAlert(custRec.message);
+    await this.clearSendKeys(this.txtFirstName, custRec.firstName);
+    await this.clearSendKeys(this.txtLastName, custRec.lastName);
+    await this.clearSendKeys(this.txtPostCode, custRec.postCode);
+    await this.click(this.btnAddCustomer);
+    await AlertDialog.verifyAndAcceptAlert(custRec.message);
+  };
+  /**
+   * TODO: comment addCustomerUsingInterface
+   * @description Add customer, the method params extends iCustomer interface
+   * @param firstname?
+   * @param lastname?
+   * @param postalcode?
+   * @param message?
+   */
+  addCustomerUsingInterface = async <T extends iCustomer>(customer: T) => {
+    if (customer.firstname) {
+      await this.clearSendKeys(this.txtFirstName, customer.firstname);
+    }
+    if (customer.lastname != undefined) {
+      await this.clearSendKeys(this.txtFirstName, customer.lastname);
+    }
+    if (customer.postalcode != undefined) {
+      await this.clearSendKeys(this.txtFirstName, customer.postalcode);
+    }
+    await this.click(this.btnAddCustomer);
+    if (customer.message != undefined) {
+      await this.clearSendKeys(this.txtFirstName, customer.message);
     }
   };
 
