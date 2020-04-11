@@ -31,7 +31,14 @@
     "rimraf": "^3.0.2",
     "ts-node": "~8.8.2",
     "typescript": "~3.8.3",
-    "webdriver-manager": "12.1.7"
+    "webdriver-manager": "12.1.7",
+    "mocha": "7.1.1",
+    "chai-http": "4.3.0",
+    "mocha-typescript": "1.1.17",
+    "mockgoose": "8.0.4",
+    "gulp-mocha": "7.0.2",
+    "axios": "0.19.2",
+    "qs": "6.9.3"
   },
   "devDependencies": {
     "@types/chai": "4.2.11",
@@ -45,8 +52,10 @@
     "@types/request": "2.48.4",
     "@types/rimraf": "^3.0.0",
     "@types/typescript": "~2.0.0",
-    "cucumber-parallel": "^2.0.3",
-    "parallel-cucumber": "^1.1.0",
-    "protractor-multiple-cucumber-html-reporter-plugin": "^1.8.1"
+    "protractor-multiple-cucumber-html-reporter-plugin": "^1.8.1",
+    "@types/mocha": "5.2.7",
+    "@types/chai-http": "4.2.0",
+    "@types/axios": "0.14.0",
+    "@types/qs": "6.5.1"
   }
 }
