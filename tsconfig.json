@@ -10,9 +10,9 @@
     "noEmitOnError": true,
     "rootDir": "./",
     "outDir": "./out",
-    "mapRoot": "./out",
-    "allowSyntheticDefaultImports": true,
+    // "mapRoot": "./out",
     "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
     "types": ["node"],
     "typeRoots": ["node_modules/@types"],
     "strict": true
