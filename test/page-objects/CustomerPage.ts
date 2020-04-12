@@ -3,7 +3,7 @@ import { TableDefinition, Then } from "cucumber";
 import { Logger } from "../helpers/Logger";
 import { AlertDialog } from "../helpers/AlertDialog";
 import { ElemtHelper } from "../helpers/ElemtHelper";
-import { iCustomer } from "../testdata/type/iCustomer";
+import { iCustomer } from "../testdata/dataType/iCustomer";
 
 export class CustomerPage extends ElemtHelper {
   private btnHome: ElementFinder;

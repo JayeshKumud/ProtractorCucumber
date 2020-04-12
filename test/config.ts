@@ -4,7 +4,7 @@ var featurePath = "../../test/features/";
 
 export let config: Config = {
   framework: "custom",
-  directConnect: true,
+  //directConnect: true,
 
   // path relative to the current config file
   frameworkPath: require.resolve("protractor-cucumber-framework"),
@@ -14,12 +14,13 @@ export let config: Config = {
       // browserName: "firefox",
       // "moz:firefoxOptions": {
       //   //args: ["--headless"],
-      //   args: ["--safe-mode"],ssss
+      //   args: ["--safe-mode"],
       // },
 
       browserName: "chrome",
       chromeOptions: {
-        args: ["disable-infobars"],
+        //args: ["disable-infobars"],
+        args: ["--headless"],
       },
 
       shardTestFiles: true,
@@ -40,6 +41,7 @@ export let config: Config = {
   ],
 
   suites: {
+    api: featurePath + "api/*.feature",
     calc: featurePath + "calculator/*.feature",
     cust: featurePath + "customer/*.feature",
     table: featurePath + "table/*.feature",
@@ -51,7 +53,7 @@ export let config: Config = {
   },
 
   // require feature files | Debug feature file which is passed
-  specs: [featurePath + "customer/*.feature"],
+  specs: [featurePath + "api/*.feature"],
 
   cucumberOpts: {
     tags: "@smoke",
