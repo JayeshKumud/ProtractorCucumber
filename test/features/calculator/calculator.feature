@@ -1,5 +1,5 @@
 Feature: Calculator Operation
-    As math idiot I want to add two numbers so that I can have results.
+    As math idiot I want to add two numbers so that I can have result.
 
     Background:
         Given I navigate to "calc" page url
