@@ -3,14 +3,13 @@ import { browser } from "protractor";
 import { Logger } from "../../helpers/Logger";
 import chai from "chai";
 import { urls } from "../../testdata/data/environment.json";
-import { ElemtHelper } from "../../helpers/ElemtHelper";
+import { ElementHelper } from "../../helpers/ElementHelper";
 import { config } from "../../config";
 
 var expect = chai.expect;
-const elemtHelper = new ElemtHelper();
+const elementHelper = new ElementHelper();
 
 Given("I navigate to {string} page url", async (url: string) => {
-  config.directConnect = true;
   switch (url) {
     case "bank": {
       await browser
@@ -30,7 +29,7 @@ Given("I navigate to {string} page url", async (url: string) => {
     }
   }
   // maximize window, wait For Angular Enabled, delete cookie, and implicit Wait
-  elemtHelper.setBrowser(true, 10);
+  elementHelper.setBrowser(true, 10);
 });
 
 Given("I verify page title as {string}", async (title) => {

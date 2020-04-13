@@ -4,7 +4,7 @@ import { Logger } from "./Logger";
 /**
  * Elemt helper
  */
-export class ElemtHelper {
+export class ElementHelper {
   private EC = protractor.ExpectedConditions;
 
   /**

@@ -2,10 +2,10 @@ import { ElementFinder, element, by, browser } from "protractor";
 import { TableDefinition, Then } from "cucumber";
 import { Logger } from "../helpers/Logger";
 import { AlertDialog } from "../helpers/AlertDialog";
-import { ElemtHelper } from "../helpers/ElemtHelper";
+import { ElementHelper } from "../helpers/ElementHelper";
 import { iCustomer } from "../testdata/dataType/iCustomer";
 
-export class CustomerPage extends ElemtHelper {
+export class CustomerPage extends ElementHelper {
   private btnHome: ElementFinder;
   private btnCustomerLogin: ElementFinder;
   public btnBankManagerLogin: ElementFinder;
