@@ -4,7 +4,7 @@
     "endpoint": {
       "users": "/api/users/",
       "singleUser": "/api/users/2",
-      "listUser": ""
+      "listUsers": "/api/users"
     },
     "body": {
       "user": {

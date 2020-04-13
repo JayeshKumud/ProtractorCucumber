@@ -1,10 +1,10 @@
 import { by, ElementFinder, element } from "protractor";
 import { TableDefinition } from "cucumber";
 import { Logger } from "../helpers/Logger";
-import { ElemtHelper } from "../helpers/ElemtHelper";
+import { ElementHelper } from "../helpers/ElementHelper";
 import chai from "chai";
 
-export class CalculatorPage extends ElemtHelper {
+export class CalculatorPage extends ElementHelper {
   expect = chai.expect;
 
   public txtFirst: ElementFinder;
