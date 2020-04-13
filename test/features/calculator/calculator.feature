@@ -13,7 +13,7 @@ Feature: Calculator Operation
         Then I see "11" display as result
 
     @smoke
-    Scenario: Math operations for diffrent two numbers
+    Scenario: Math operations for two different number
         When I verify page title as "Super Calculator"
         Then I do math operation using below data and verify results
             | Operator | first | second | result |
