@@ -1,0 +1,16 @@
+{
+  "apiResource": {
+    "url": "https://reqres.in",
+    "endpoint": {
+      "users": "/api/users/",
+      "singleUser": "/api/users/2",
+      "listUser": ""
+    },
+    "body": {
+      "user": {
+        "name": "morpheus",
+        "job": "leader"
+      }
+    }
+  }
+}
