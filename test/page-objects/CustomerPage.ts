@@ -1,9 +1,9 @@
-import { ElementFinder, element, by, browser } from "protractor";
-import { TableDefinition, Then } from "cucumber";
-import { Logger } from "../helpers/Logger";
-import { AlertDialog } from "../helpers/AlertDialog";
-import { ElementHelper } from "../helpers/ElementHelper";
-import { iCustomer } from "../testdata/dataType/iCustomer";
+import { ElementFinder, element, by, browser } from 'protractor';
+import { TableDefinition, Then } from 'cucumber';
+import { Logger } from '../helpers/Logger';
+import { AlertDialog } from '../helpers/AlertDialog';
+import { ElementHelper } from '../helpers/ElementHelper';
+import { iCustomer } from '../testdata/dataType/iCustomer';
 
 export class CustomerPage extends ElementHelper {
   private btnHome: ElementFinder;
@@ -22,16 +22,16 @@ export class CustomerPage extends ElementHelper {
    */
   constructor() {
     super();
-    this.btnHome = element(by.css(".home"));
+    this.btnHome = element(by.css('.home'));
     this.btnCustomerLogin = element(by.css("button[ng-click='customer()']"));
     this.btnBankManagerLogin = element(by.css("button[ng-click='manager()']"));
     this.tabAddCustomer = element(by.css("button[ng-class='btnClass1']"));
     this.tabOpenAccount = element(by.css("button[ng-class='btnClass2']"));
     this.tabCustomers = element(by.css("button[ng-class='btnClass3']"));
-    this.btnAddCustomer = element(by.css(".btn-default"));
-    this.txtFirstName = element(by.model("fName"));
-    this.txtLastName = element(by.model("lName"));
-    this.txtPostCode = element(by.model("postCd"));
+    this.btnAddCustomer = element(by.css('.btn-default'));
+    this.txtFirstName = element(by.model('fName'));
+    this.txtLastName = element(by.model('lName'));
+    this.txtPostCode = element(by.model('postCd'));
   }
 
   /**
@@ -110,7 +110,7 @@ export class CustomerPage extends ElementHelper {
 
     // invalid data type is passed
     else {
-      Logger.log("Invalid data type is passed : " + customers);
+      Logger.log('Invalid data type is passed : ' + customers);
     }
   };
 }

@@ -1,1 +1,1 @@
-declare module "chakram";
+declare module 'chakram';

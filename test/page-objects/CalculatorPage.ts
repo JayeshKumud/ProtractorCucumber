@@ -1,8 +1,8 @@
-import { by, ElementFinder, element } from "protractor";
-import { TableDefinition } from "cucumber";
-import { Logger } from "../helpers/Logger";
-import { ElementHelper } from "../helpers/ElementHelper";
-import chai from "chai";
+import { by, ElementFinder, element } from 'protractor';
+import { TableDefinition } from 'cucumber';
+import { Logger } from '../helpers/Logger';
+import { ElementHelper } from '../helpers/ElementHelper';
+import chai from 'chai';
 
 export class CalculatorPage extends ElementHelper {
   expect = chai.expect;
@@ -18,11 +18,11 @@ export class CalculatorPage extends ElementHelper {
    */
   constructor() {
     super();
-    this.txtFirst = element(by.model("first"));
-    this.txtSecond = element(by.model("second"));
-    this.btnGo = element(by.id("gobutton"));
-    this.lblHeader = element(by.css("h2"));
-    this.selectOperator = element(by.model("operator"));
+    this.txtFirst = element(by.model('first'));
+    this.txtSecond = element(by.model('second'));
+    this.btnGo = element(by.id('gobutton'));
+    this.lblHeader = element(by.css('h2'));
+    this.selectOperator = element(by.model('operator'));
   }
 
   /**
@@ -45,14 +45,14 @@ export class CalculatorPage extends ElementHelper {
 
         await this.lblHeader.getText().then((text) => {
           this.expect(text).to.equal(rows[i].result);
-          Logger.log("verified the display value : " + rows[i].result);
+          Logger.log('verified the display value : ' + rows[i].result);
         });
       }
     }
 
     // invalid data type is passed
     else {
-      Logger.log("Invalid data type is passed : " + opsdata);
+      Logger.log('Invalid data type is passed : ' + opsdata);
     }
   };
   /**

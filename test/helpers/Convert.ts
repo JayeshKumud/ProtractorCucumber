@@ -1,4 +1,4 @@
-import { apiResource } from "../testdata/data/apiResource.json";
+import { apiResource } from '../testdata/data/apiResource.json';
 
 export class userJsonToMap {
   static updateUser(key: string, value: string): Map<string, string> {

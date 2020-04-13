@@ -1,4 +1,4 @@
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 
 export class Api {
   private api: AxiosInstance;
@@ -67,13 +67,13 @@ const ApiConfig = {
   returnRejectedPromiseOnError: true,
   withCredentials: true,
   timeout: 30 * 1000,
-  baseURL: "https://reqres.in/",
+  baseURL: 'https://reqres.in/',
   headers: {
     common: {
-      "Cache-Control": "no-cache, no-store, must-revalidate",
-      Pragma: "no-cache",
-      "Content-Type": "application/json",
-      Accept: "application/json",
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
+      Pragma: 'no-cache',
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
     },
   },
 };

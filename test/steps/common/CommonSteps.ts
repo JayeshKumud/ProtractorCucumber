@@ -1,30 +1,30 @@
-import { Given } from "cucumber";
-import { browser } from "protractor";
-import { Logger } from "../../helpers/Logger";
-import chai from "chai";
-import { urls } from "../../testdata/data/environment.json";
-import { ElementHelper } from "../../helpers/ElementHelper";
-import { config } from "../../config";
+import { Given } from 'cucumber';
+import { browser } from 'protractor';
+import { Logger } from '../../helpers/Logger';
+import chai from 'chai';
+import { urls } from '../../testdata/data/environment.json';
+import { ElementHelper } from '../../helpers/ElementHelper';
+import { config } from '../../config';
 
 var expect = chai.expect;
 const elementHelper = new ElementHelper();
 
-Given("I navigate to {string} page url", async (url: string) => {
+Given('I navigate to {string} page url', async (url: string) => {
   switch (url) {
-    case "bank": {
+    case 'bank': {
       await browser
         .get(urls.bank)
-        .then(() => Logger.log("browser navigate : " + urls.bank));
+        .then(() => Logger.log('browser navigate : ' + urls.bank));
       break;
     }
-    case "calc": {
+    case 'calc': {
       await browser
         .get(urls.calc)
-        .then(() => Logger.log("browser navigate : " + urls.calc));
+        .then(() => Logger.log('browser navigate : ' + urls.calc));
       break;
     }
     default: {
-      Logger.log("Fail to navigate, Invalid browser " + url);
+      Logger.log('Fail to navigate, Invalid browser ' + url);
       break;
     }
   }
@@ -32,9 +32,9 @@ Given("I navigate to {string} page url", async (url: string) => {
   elementHelper.setBrowser(true, 10);
 });
 
-Given("I verify page title as {string}", async (title) => {
+Given('I verify page title as {string}', async (title) => {
   await browser.getTitle().then((ttl) => {
     expect(ttl).to.equal(title);
-    Logger.log("Browser Title is verified : " + title);
+    Logger.log('Browser Title is verified : ' + title);
   });
 });

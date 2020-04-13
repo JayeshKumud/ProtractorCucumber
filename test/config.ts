@@ -1,13 +1,13 @@
-import { Config } from "protractor";
+import { Config } from 'protractor';
 
-var featurePath = "../../test/features/";
+var featurePath = '../../test/features/';
 
 export let config: Config = {
-  framework: "custom",
+  framework: 'custom',
   //directConnect: true,
 
   // path relative to the current config file
-  frameworkPath: require.resolve("protractor-cucumber-framework"),
+  frameworkPath: require.resolve('protractor-cucumber-framework'),
 
   multiCapabilities: [
     {
@@ -16,9 +16,9 @@ export let config: Config = {
       //   args: ["--safe-mode"],
       // },
 
-      browserName: "chrome",
+      browserName: 'chrome',
       chromeOptions: {
-        args: ["disable-infobars"],
+        args: ['disable-infobars'],
         //args: ["--headless"],
       },
 
@@ -27,48 +27,48 @@ export let config: Config = {
 
       metadata: {
         browser: {
-          name: "chrome",
-          version: "58",
+          name: 'chrome',
+          version: '58',
         },
-        device: "Windows Desktop",
+        device: 'Windows Desktop',
         platform: {
-          name: "Windows",
-          version: "Windows 10",
+          name: 'Windows',
+          version: 'Windows 10',
         },
       },
     },
   ],
 
   suites: {
-    api: featurePath + "api/*.feature",
-    calc: featurePath + "calculator/*.feature",
-    cust: featurePath + "customer/*.feature",
-    table: featurePath + "table/*.feature",
+    api: featurePath + 'api/*.feature',
+    calc: featurePath + 'calculator/*.feature',
+    cust: featurePath + 'customer/*.feature',
+    table: featurePath + 'table/*.feature',
     Two: [
-      featurePath + "calculator/*.feature",
-      featurePath + "customer/*.feature",
+      featurePath + 'calculator/*.feature',
+      featurePath + 'customer/*.feature',
     ],
-    all: [featurePath + "**/*.feature"],
+    all: [featurePath + '**/*.feature'],
   },
 
   // require feature files | Debug feature file which is passed
-  specs: [featurePath + "api/*.feature"],
+  specs: [featurePath + 'api/*.feature'],
 
   cucumberOpts: {
-    tags: "@smoke",
-    format: "json:./logs/Cucumber.json",
-    require: ["./steps/**/*.js"],
+    tags: '@smoke',
+    format: 'json:./logs/Cucumber.json',
+    require: ['./steps/**/*.js'],
   },
 
   plugins: [
     {
-      package: "protractor-multiple-cucumber-html-reporter-plugin",
+      package: 'protractor-multiple-cucumber-html-reporter-plugin',
       options: {
         automaticallyGenerateReport: true,
         removeExistingJsonReportFile: true,
         removeOriginalJsonReportFile: true,
         displayDuration: true,
-        reportName: "report.html",
+        reportName: 'report.html',
       },
     },
   ],
