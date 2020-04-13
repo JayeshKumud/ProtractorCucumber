@@ -1,5 +1,5 @@
-import { browser, ElementFinder, protractor, by } from "protractor";
-import { Logger } from "./Logger";
+import { browser, ElementFinder, protractor, by } from 'protractor';
+import { Logger } from './Logger';
 
 /**
  * Elemt helper
@@ -38,7 +38,7 @@ export class ElementHelper {
    */
   async sendKeys(element: ElementFinder, txtValue: string) {
     await element.sendKeys(txtValue).then(() => {
-      Logger.log("Clear and Set value : " + txtValue + " to element");
+      Logger.log('Clear and Set value : ' + txtValue + ' to element');
     });
   }
 
@@ -52,7 +52,7 @@ export class ElementHelper {
       .clear()
       .then(() => element.sendKeys(txtValue))
       .then(() => {
-        Logger.log("Set value : " + txtValue + " to element");
+        Logger.log('Set value : ' + txtValue + ' to element');
       });
   }
 
@@ -62,7 +62,7 @@ export class ElementHelper {
    */
   async click(element: ElementFinder) {
     await element.click().then(() => {
-      Logger.log("clicked element option");
+      Logger.log('clicked element option');
     });
   }
 
@@ -73,10 +73,10 @@ export class ElementHelper {
    */
   async selectOption(select: ElementFinder, optionValue: string) {
     await select
-      .element(by.cssContainingText("option", optionValue))
+      .element(by.cssContainingText('option', optionValue))
       .click()
       .then(() => {
-        Logger.log("Select option value : " + optionValue + " from element");
+        Logger.log('Select option value : ' + optionValue + ' from element');
       });
   }
 
@@ -115,7 +115,7 @@ export class ElementHelper {
   async elementClickable(element: ElementFinder): Promise<ElementFinder> {
     await browser.wait(() => element.isElementPresent);
     await browser.wait(this.EC.elementToBeClickable(element)).then(() => {
-      Logger.log("element : " + +" is clickable");
+      Logger.log('element : ' + +' is clickable');
     });
     return element;
   }

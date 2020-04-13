@@ -1,4 +1,4 @@
-Feature: Verify Table
+Feature: Verify Table Feature
     As POC I want to display table feature so that I can use in project.
 
     @smoke

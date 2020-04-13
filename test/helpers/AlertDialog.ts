@@ -1,7 +1,7 @@
-import { protractor } from "protractor/built/ptor";
-import { browser } from "protractor";
-import { Logger } from "./Logger";
-import { expect } from "chai";
+import { protractor } from 'protractor/built/ptor';
+import { browser } from 'protractor';
+import { Logger } from './Logger';
+import { expect } from 'chai';
 
 export class AlertDialog {
   /**
@@ -12,7 +12,7 @@ export class AlertDialog {
    */
   static async verifyAndAcceptAlert(text: string) {
     var EC = protractor.ExpectedConditions;
-    browser.wait(EC.alertIsPresent(), 4000, "Alert not found");
+    browser.wait(EC.alertIsPresent(), 4000, 'Alert not found');
 
     let alert_Customer = await browser.switchTo().alert();
     await browser.driver.sleep(2 * 1000);

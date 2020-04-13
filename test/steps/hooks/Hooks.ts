@@ -1,6 +1,6 @@
-import { Before, After, BeforeAll, Status, AfterAll } from "cucumber";
-import { browser } from "protractor";
-import { Logger } from "../../helpers/Logger";
+import { Before, After, BeforeAll, Status, AfterAll } from 'cucumber';
+import { browser } from 'protractor';
+import { Logger } from '../../helpers/Logger';
 
 // Run before all the features
 BeforeAll({ timeout: 60 * 1000 }, async () => {});
@@ -18,14 +18,14 @@ After(async function (scenario) {
   if (scenario.result.status === Status.FAILED) {
     // screenShot is a base-64 encoded PNG
     const screenShot = await browser.takeScreenshot();
-    this.attach(screenShot, "image/png");
+    this.attach(screenShot, 'image/png');
   }
 });
 
 // This hook will be executed before scenarios tagged with @smoke
-Before({ tags: "@smoke" }, () => {});
+Before({ tags: '@smoke' }, () => {});
 
 // This hook will be executed after scenarios tagged with @smoke
-After({ tags: "@smoke" }, () => {
-  Logger.log("Tag completed");
+After({ tags: '@smoke' }, () => {
+  Logger.log('Tag completed');
 });
