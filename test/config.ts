@@ -13,14 +13,13 @@ export let config: Config = {
     {
       // browserName: "firefox",
       // "moz:firefoxOptions": {
-      //   //args: ["--headless"],
       //   args: ["--safe-mode"],
       // },
 
       browserName: "chrome",
       chromeOptions: {
-        //args: ["disable-infobars"],
-        args: ["--headless"],
+        args: ["disable-infobars"],
+        //args: ["--headless"],
       },
 
       shardTestFiles: true,
