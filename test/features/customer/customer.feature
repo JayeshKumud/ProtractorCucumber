@@ -1,4 +1,4 @@
-Feature: Customer creation
+Feature: Customer Creation
     As use I want to create customer so that they can access site
 
     Background:

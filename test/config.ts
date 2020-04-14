@@ -4,7 +4,7 @@ var featurePath = '../../test/features/';
 
 export let config: Config = {
   framework: 'custom',
-  //directConnect: true,
+  directConnect: true,
 
   // path relative to the current config file
   frameworkPath: require.resolve('protractor-cucumber-framework'),
@@ -21,21 +21,23 @@ export let config: Config = {
         args: ['disable-infobars'],
         //args: ["--headless"],
       },
-
-      shardTestFiles: true,
-      maxInstances: 3,
-
       metadata: {
-        browser: {
-          name: 'chrome',
-          version: '58',
-        },
         device: 'Windows Desktop',
         platform: {
           name: 'Windows',
-          version: 'Windows 10',
+          version: '10',
+        },
+        customData: {
+          title: 'Sprint Run info',
+          data: [
+            { label: 'Project', value: 'KvK business challenge' },
+            { label: 'Release', value: 'Sprint 0' },
+            { label: 'Cycle', value: 'XXX.YYY' },
+          ],
         },
       },
+      shardTestFiles: true,
+      maxInstances: 3,
     },
   ],
 
@@ -43,7 +45,6 @@ export let config: Config = {
     api: featurePath + 'api/*.feature',
     calc: featurePath + 'calculator/*.feature',
     cust: featurePath + 'customer/*.feature',
-    table: featurePath + 'table/*.feature',
     Two: [
       featurePath + 'calculator/*.feature',
       featurePath + 'customer/*.feature',
@@ -68,7 +69,7 @@ export let config: Config = {
         removeExistingJsonReportFile: true,
         removeOriginalJsonReportFile: true,
         displayDuration: true,
-        reportName: 'report.html',
+        reportName: 'report',
       },
     },
   ],
