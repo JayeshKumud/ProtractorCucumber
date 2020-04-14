@@ -1,4 +1,4 @@
-Feature: Validate user API
+Feature: Validate User APIs
     As {} I want to {} so that I can {}
 
     @smoke
