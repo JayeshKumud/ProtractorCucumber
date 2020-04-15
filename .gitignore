@@ -3,4 +3,3 @@ logs/
 out-tsc/
 debug.log
 # IDE - VSCode
-.vscode/*
