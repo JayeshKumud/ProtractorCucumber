@@ -1,5 +1,5 @@
 import { Given, Then, TableDefinition } from 'cucumber';
-import { CustomerPage } from '../../page-objects/CustomerPage';
+import { CustomerPage } from '../../page-objects/customer.po';
 import { customers } from '../../testdata/data/customers.json';
 
 var customerPage = new CustomerPage();
