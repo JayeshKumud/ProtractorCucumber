@@ -1,17 +1,24 @@
+MAKE SURE THAT YOU ARE AT e2e (TEST DIRECTORY)
+
+cd e2e
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 CONFIGURE PROJECT SETUP
 Navigate to terminal
+cd e2e
 npm install // to install all the dependency in package.json
 node ./node_modules/protractor/bin/webdriver-manager update // to install Webdriver locally
 npm test
 
 OR
-protractor out/config.js --suite SUITE NAME
+protractor out/protractor.conf.js --suite SUITE NAME
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 RUN THE TESTS FROM JENKINS
 
 Command to run from Jankins
+Call cd e2e
 Call npm install
 Call node ./node_modules/protractor/bin/webdriver-manager update
 Call npm test
@@ -51,6 +58,10 @@ https://kb.froglogic.com/squish/integrations/jenkins/content-security-policy-csp
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 To update to a new major version all the packages
+
+MAKE SURE THAT YOU ARE AT e2e (TEST DIRECTORY)
+
+cd e2e
 
 install the npm-check-updates package globally:
 npm install -g npm-check-updates

@@ -9,7 +9,7 @@
     "forceConsistentCasingInFileNames": true,
     "noEmitOnError": true,
     "rootDir": "./",
-    "outDir": "./out",
+    "outDir": "../out-tsc/e2e",
     // "mapRoot": "./out",
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,

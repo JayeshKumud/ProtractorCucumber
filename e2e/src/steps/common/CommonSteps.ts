@@ -4,7 +4,7 @@ import { Logger } from '../../helpers/Logger';
 import chai from 'chai';
 import { urls } from '../../testdata/data/environment.json';
 import { ElementHelper } from '../../helpers/ElementHelper';
-import { config } from '../../config';
+import { config } from '../../../protractor.conf';
 
 var expect = chai.expect;
 const elementHelper = new ElementHelper();

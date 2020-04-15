@@ -7,7 +7,7 @@ var log4jsJson = {
     file: {
       category: 'test-file-appender',
       type: 'file',
-      filename: 'logs/debug/log.log',
+      filename: './logs/debug/log.log',
       maxLogSize: 10240,
       backups: 3,
       pattern: '%d %p %c %x{user} %m%n',

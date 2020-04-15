@@ -1,5 +1,6 @@
 node_modules/
 logs/
-out/
-Cucumber.json
+out-tsc/
 debug.log
+# IDE - VSCode
+.vscode/*
