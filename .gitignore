@@ -1,6 +1,6 @@
-e2e/node_modules/
-e2e/logs/
-e2e/out/
-e2e/debug.log
+node_modules/
+logs/
+out-tsc/
+debug.log
 # IDE - VSCode
 .vscode/*

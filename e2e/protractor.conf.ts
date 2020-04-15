@@ -1,6 +1,6 @@
 import { Config } from 'protractor';
 
-var featurePath = '../src/features/';
+var featurePath = '../../e2e/src/features/';
 
 export let config: Config = {
   framework: 'custom',
