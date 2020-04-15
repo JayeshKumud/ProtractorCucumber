@@ -1,5 +1,4 @@
-node_modules/
-logs/
-out/
-Cucumber.json
-debug.log
+e2e/node_modules/
+e2e/logs/
+e2e/out/
+e2e/debug.log

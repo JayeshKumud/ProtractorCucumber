@@ -1,12 +1,10 @@
 import { Config } from 'protractor';
 
-var featurePath = '../../test/features/';
+var featurePath = '../src/features/';
 
 export let config: Config = {
   framework: 'custom',
   directConnect: true,
-
-  // path relative to the current config file
   frameworkPath: require.resolve('protractor-cucumber-framework'),
 
   multiCapabilities: [
@@ -21,26 +19,18 @@ export let config: Config = {
         args: ['disable-infobars'],
         //args: ["--headless"],
       },
+
       metadata: {
         device: 'Windows Desktop',
         platform: {
           name: 'Windows',
           version: '10',
         },
-        customData: {
-          title: 'Sprint Run info',
-          data: [
-            { label: 'Project', value: 'KvK business challenge' },
-            { label: 'Release', value: 'Sprint 0' },
-            { label: 'Cycle', value: 'XXX.YYY' },
-          ],
-        },
       },
       shardTestFiles: true,
       maxInstances: 3,
     },
   ],
-
   suites: {
     api: featurePath + 'api/*.feature',
     calc: featurePath + 'calculator/*.feature',
@@ -58,7 +48,7 @@ export let config: Config = {
   cucumberOpts: {
     tags: '@smoke',
     format: 'json:./logs/Cucumber.json',
-    require: ['./steps/**/*.js'],
+    require: ['./src/steps/**/*.js'],
   },
 
   plugins: [
@@ -71,6 +61,14 @@ export let config: Config = {
         displayDuration: true,
         reportName: 'report',
       },
+      // customData: {
+      //   title: 'Run info',
+      //   data: [
+      //     { label: 'Project', value: 'Custom project' },
+      //     { label: 'Release', value: '1.2.3' },
+      //     { label: 'Cycle', value: 'B11221.34321' },
+      //   ],
+      // },
     },
   ],
 };
