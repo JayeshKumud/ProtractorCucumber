@@ -6,9 +6,9 @@
   "scripts": {
     "protractor": "./node_modules/protractor/build/cli.js",
     "webdriver-update": "node ./node_modules/protractor/bin/webdriver-manager update",
-    "pretest": "rimraf /logs/**/*.json && rimraf /logs/report/features/*.html && npm run tsc",
+    "pretest": "rimraf ./logs/**/*.json && rimraf ./logs/report/features/*.html && npm run tsc",
     "tsc": "tsc --build --clean && tsc",
-    "test": "protractor out/protractor.conf.js --suite all"
+    "test": "protractor out/protractor.conf.js --suite api"
   },
   "author": "Jayesh Kumud",
   "license": "ISC",
