@@ -6,6 +6,7 @@ export let config: Config = {
   framework: 'custom',
   directConnect: true,
   frameworkPath: require.resolve('protractor-cucumber-framework'),
+  package: require.resolve('protractor-cucumber-framework'),
 
   multiCapabilities: [
     {
@@ -53,7 +54,9 @@ export let config: Config = {
 
   plugins: [
     {
-      package: 'protractor-multiple-cucumber-html-reporter-plugin',
+      package: require.resolve(
+        'protractor-multiple-cucumber-html-reporter-plugin'
+      ),
       options: {
         automaticallyGenerateReport: true,
         removeExistingJsonReportFile: true,
