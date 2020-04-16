@@ -1,5 +1,5 @@
 import { Given, When, Then, TableDefinition } from 'cucumber';
-import { CalculatorPage } from '../../page-objects/CalculatorPage';
+import { CalculatorPage } from '../../page-objects/calculator.po';
 import { Logger } from '../../helpers/Logger';
 import chai from 'chai';
 
