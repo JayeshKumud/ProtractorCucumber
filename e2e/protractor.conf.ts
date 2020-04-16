@@ -44,7 +44,7 @@ export let config: Config = {
   },
 
   // require feature files | Debug feature file which is passed
-  specs: [featurePath + 'api/*.feature'],
+  specs: [featurePath + 'customer/*.feature'],
 
   cucumberOpts: {
     tags: '@smoke',

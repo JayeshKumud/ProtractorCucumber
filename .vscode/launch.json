@@ -10,9 +10,9 @@
       "showAsyncStacks": true,
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}/node_modules/protractor/bin/protractor",
-      "args": ["${workspaceFolder}/out-tcs/src/protractor.conf.js"],
-      "preLaunchTask": "tsc: build - tsconfig.json",
-      "outFiles": ["${workspaceFolder}/out-tsc/src/**/*.js"]
+      "args": ["${workspaceFolder}/out-tsc/e2e/protractor.conf.js"],
+      "preLaunchTask": "tsc: build - e2e/tsconfig.json",
+      "outFiles": ["${workspaceFolder}/out-tsc/e2e/src/**/*.js"]
     }
   ]
 }
