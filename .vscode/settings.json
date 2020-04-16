@@ -8,7 +8,7 @@
   "comment-ts.scoped": true,
 
   "cucumberautocomplete.syncfeatures": "e2e/src/features/**/*feature",
-  "cucumberautocomplete.steps": ["e2e/src/steps/**/*.ts"],
+  "cucumberautocomplete.steps": ["e2e/src/specs/**/*.ts"],
   "cucumberautocomplete.smartSnippets": true,
   "cucumberautocomplete.stepsInvariants": true,
   "cucumberautocomplete.customParameters": [

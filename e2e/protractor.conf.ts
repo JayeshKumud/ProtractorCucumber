@@ -48,7 +48,7 @@ export let config: Config = {
   cucumberOpts: {
     tags: '@smoke',
     format: 'json:./logs/Cucumber.json',
-    require: ['./src/steps/**/*.js'],
+    require: ['./src/specs/**/*.js'],
   },
 
   plugins: [
@@ -61,14 +61,14 @@ export let config: Config = {
         displayDuration: true,
         reportName: 'report',
       },
-      // customData: {
-      //   title: 'Run info',
-      //   data: [
-      //     { label: 'Project', value: 'Custom project' },
-      //     { label: 'Release', value: '1.2.3' },
-      //     { label: 'Cycle', value: 'B11221.34321' },
-      //   ],
-      // },
+      customData: {
+        title: 'Run info',
+        data: [
+          { label: 'Project', value: 'Custom project' },
+          { label: 'Release', value: '1.2.3' },
+          { label: 'Cycle', value: 'B11221.34321' },
+        ],
+      },
     },
   ],
 };
