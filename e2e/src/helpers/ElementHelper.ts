@@ -119,4 +119,39 @@ export class ElementHelper {
     });
     return element;
   }
+  
+  // Code to reach parent from child node
+  
+   // private async verifyAttachmentErrorMessage(oelement: ElementFinder, error: string) {
+  //   var errorElement = oelement.element(by.xpath('ancestor::kvk-upload-view[1]')).$('.k-form__error-message');
+  //   await errorElement.isPresent().then(async () => {
+  //     await errorElement.getText().then((text) => {
+  //       expect(text).to.equal(error, 'Fail to find error message : ' + error + ' for ' + oelement.locator());
+  //     });
+  //   });
+  // }
+
+  // private async verifyErrorMessage(oelement: ElementFinder, error: string) {
+  //   var errorElement = oelement
+  //     .element(by.xpath('ancestor::div[1]'))
+  //     .element(by.xpath('ancestor::div[1]'))
+  //     .$('.k-form__error-message');
+  //   await errorElement.isPresent().then(async () => {
+  //     await errorElement.getText().then((text) => {
+  //       expect(text).to.equal(error, 'Fail to find error message : ' + error + ' for ' + oelement.locator());
+  //     });
+  //   });
+  // }
+
+  // private async verifyChallengeDescriptionErrorMessage(error: string) {
+  //   var errorElement = element(
+  //     by.css('div.k-form__control.ng-invalid.k-form__control.k-form__control--error.k-form__control')
+  //   ).$('.k-form__error-message');
+  //   await errorElement.isPresent().then(async () => {
+  //     await errorElement.getText().then((text) => {
+  //       expect(text).to.equal(error, 'Fail to find error message : ' + error + ' for ' + errorElement.locator());
+  //     });
+  //   });
+  // }
+  
 }
