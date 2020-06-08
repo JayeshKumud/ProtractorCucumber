@@ -32,6 +32,8 @@ export let config: Config = {
       maxInstances: 3,
     },
   ],
+  // for single instance
+  //maxSessions: 1,
   suites: {
     api: featurePath + 'api/*.feature',
     calc: featurePath + 'calculator/*.feature',
