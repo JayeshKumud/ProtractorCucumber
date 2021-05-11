@@ -20,7 +20,7 @@
     "hashmap": "2.4.0",
     "jasmine": "~3.5.0",
     "jasminewd2": "2.2.0",
-    "lodash": "4.17.15",
+    "lodash": "4.17.21",
     "log4js": "6.1.2",
     "navigator": "~1.0.1",
     "protractor": "~5.4.3",
